@@ -8,6 +8,11 @@
 
 W = 20000000
 S = 5.0
-N = 0.5
+N <- 1:50
 C <- (W*log2(1 + S/N))/1000000
 C
+plot(C, xlim=c(1,55), ylim=c(1,55),
+     xlab = "Noise Level (watts)", 
+     ylab = "Data Rate (Mbps)")
+lines(x=N, y=C)
+
