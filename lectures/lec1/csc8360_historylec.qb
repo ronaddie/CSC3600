@@ -54,3 +54,75 @@ Prac
 *	Thursday 1pm - 2pm
 	*	Toowoomba D113
 
+History of Wireless Communication
+---------------------------------
+* Chronology
+* Mobile telephony
+* Wireless LANs
+* Where next
+
+Chronology 1
+----------
+@close
+\large
+\begin{tabular}{|l|p{8cm}|}
+\hline
+\bf Year & \bf Discovery / Development \\
+\hline
+1804 & Joseph Fourier discovers all signals can be decomposed into frequencies \\
+1820 & Hans Christian Orsted discovers electromagnetic fields \\
+1831 & Michael Faraday discovers electromagnetic induction \\
+1864 & James Clerk Maxwell discovers the partial differential equations for electromagnetic waves
+	(light)\\
+\hline
+\end{tabular}
+Wireless Chronology Part 1 (Microwave Journal (\url{microwavejournal.com})\label{chronology}
+
+Chronology 2
+----------
+@close
+\large
+\begin{tabular}{|l|p{8cm}|}
+\hline
+\bf Year & \bf Discovery / Development \\
+\hline
+1888 & Hertz produces, transmits, and receivs electromagnetic waves \\
+1895 & Marconi transmits and receives a coded message at a distance of 1.75 miles \\
+1899 & Marconi sends the first international wireless message from England to France\\
+1923 & The decibel (1/10th of a bel, after A. G. Bell, inventor of the telephone) used to express loss (of power) \\
+1924 & The mobile telephone invented by Bell Telephone and introduced to NYC police \\
+\hline
+\end{tabular}
+Wireless Chronology Part 2 (Microwave Journal (\url{microwavejournal.com})\label{chronology}
+
+Chronology 3
+----------
+@close
+\large
+\begin{tabular}{|l|p{8cm}|}
+\hline
+\bf Year & \bf Discovery / Development \\
+\hline
+1932 & The International Telecommunications Union (ITU) formed \\
+1948 & Branttain, Bardeen and Shockley build the junction transistor\\
+1948 & Claude Shannon develops the theoretical foundations of digital communications \\
+1978 & AT\&T Bell Labs test a mobile telephone system based on cells\\
+1990 & WWW developed\\
+\hline
+\end{tabular}
+Wireless Chronology Part 2 (Microwave Journal (\url{microwavejournal.com})\label{chronology}
+
+Mobile Telephony
+----------------
+As mentioned in the chronology, above, mobile phones were first used in 1924. However,
+it was not till much later that they became widespread. \\[5mm]
+%
+
+
+Wireless LANs
+-------------
+For the moment it seems to reasonable to call the history of wireless since the introduction 
+of the Internet {\em modern}.
+
+Where Next
+----------
