@@ -1,0 +1,52 @@
+#%qb Quickbeam slide presn template, qb_template.tex (title)
+#\documentclass[18pt]{beamer}
+#\usepackage[utf8]{inputenc}
+# 
+#\title{WiFi and 802.11 Regulations, Standards, Organizations}
+#\author{Zhongwei Zhang}
+#\institute{University of Southern Queensland}
+#\date{2022}
+# 
+#%  \usebackgroundtemplate{
+#%  \includegraphics[width=\paperwidth,
+#%  height=\paperheight]{Images/background.jpg}
+#%  }
+#
+#% This seems to work
+#\setbeamerfont{frametitle}{size=\Huge}
+#
+#\definecolor{exampleColor}{rgb}{1,1,.8}
+# 
+#\usepackage{hyperref}
+#
+#\begin{document}
+#\frame{\titlepage}
+# 
+
+WiFi and 802.11 Regulations, Standards, Organizations
+---------------------
+*	International Standards Organisations (with an interest in wifi)
+	*	IEEE
+	*	IETF (the Internet)
+	*	ITU
+	*	ISO
+	*	3GPP
+	*	ETSI
+
+Institute of Electrical and Electronic Engineers (IEEE)
+--------------------------
+
+Internet Engineering Task Force (Internet Standards)
+--------------------------
+
+The International Telecommunication Union (ITU)
+--------------------------
+
+The International Standards Organization (ISO)
+--------------------------
+
+The 3rd-generation Partnership Project (3GPP)
+--------------------------
+
+ETSI
+----

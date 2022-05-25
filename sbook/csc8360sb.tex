@@ -1,0 +1,122 @@
+\documentclass[a4paper,11pt]{book}
+%\documentclass[a4paper,12pt,oneside]{book}
+%\usepackage[usenames,dvips]{color}
+%\usepackage{subfigure,times,pifont,url,moreverb}
+\usepackage{enumerate}
+\usepackage{makeidx}
+\usepackage{supertabular} % For big tables over more than one page
+\usepackage[utf8]{inputenc} % To get things correct on my machine. Needed on Ron's?
+%\usepackage[color,makeanswers]{macsbcore} % For paper Study Book
+%\usepackage[color,makeanswers]{macsb} % For paper Study Book
+\usepackage[makeanswers,colour]{macsb} % For paper Study Book
+%\usepackage{macsbe}  % For electronic Study Book
+\usepackage{subfigure,moreverb,url} % Extra packages not already loaded
+% \usepackage[duplex]{printer}
+\usepackage{amsmath} \usepackage{amsfonts} \usepackage{amssymb}
+\usepackage{hyperref}  % generate nice pdf
+\hypersetup{pdftex,
+            backref=true,
+            hyperindex=true,
+            colorlinks=true,
+            linkcolor=black,citecolor=black,filecolor=black,urlcolor=black,
+            bookmarks=true,
+            breaklinks=true
+            }
+% Bold Greek
+\let\oldtheindex\theindex\def\theindex{%
+\oldtheindex%\addcontentsline{toc}{chapter}{Index}%
+\pdfbookmark[0]{Index}{theindex}}
+\let\oldthebib\thebib\def\thebib{%
+References%
+\pdfbookmark[0]{References}{thebibliography}
+}%
+\newcommand{\boldmu}{\mbox{\boldmath$\mu$}}
+% Now, make verbatim environment in small font--properly!
+\let\VERBATIM\verbatin
+\def\verbatin{%
+  \def\verbatim@font{\small\ttfamily}%
+  \VERBATIM}
+%\renewcommand{\partname}{Part}
+%\renewcommand{\partname}{Chapter}
+% Change  floatpagefraction  to allow full page figures.
+%\renewcommand\floatpagefraction{1.00}
+% Some useful short-cuts
+% Now, to make the table that much prettier:
+\newcommand{\topnewrule}{\rule{0mm}{5mm}}          %For tables
+\newcommand{\botnewrule}{\rule[-3mm]{0mm}{0mm}}   %For tables
+\newcommand{\bothnewrule}{\rule[-3mm]{0mm}{8mm}}   %For tables
+\makeindex
+\usepackage{Sweave}
+\begin{document}
+
+% My Sweave options:
+\setkeys{Gin}{width=0.7\textwidth}
+
+
+\title{Wireless Networking}
+\author{David Fatseas and Ron Addie}
+
+\date{\filedate\ (typeset \today)}
+
+\unitno{CSC8360}
+\include{front}
+\frontpages
+
+\dominitoc
+\addcontentsline{toc}{chapter}{Front Matter}
+\addcontentsline{toc}{section}{Table of Contents}
+\tableofcontents
+
+%\include{front}
+
+\vfil
+\section*{List of Exercises}
+\addcontentsline{toc}{section}{List of Exercises}
+\listofexercises
+\newpage
+\section*{List of Examples}
+\addcontentsline{toc}{section}{List of Examples}
+\listofexamples
+
+\newpage
+\section*{List of Figures}
+\addcontentsline{toc}{section}{List of Figures}
+\listoffigs
+\vfil
+\newpage
+\section*{List of Tables}
+\addcontentsline{toc}{section}{List of Tables} 
+\listoftabs
+\vfil
+
+\mainmatter
+% To bust into smaller sections, use something like this:
+%    pdftk master.pdf cat 5-29 output sta8304-chap1.pdf
+%    pdftk master.pdf cat 31-48 output sta8304-chap2.pdf
+%    pdftk master.pdf cat 49-66 output sta8304-chap3.pdf
+%    pdftk master.pdf cat 67-79 output sta8304-chap4.pdf
+%    pdftk master.pdf cat 81-111 output sta8304-chap5.pdf
+%    pdftk master.pdf cat 113-136 output sta8304-chap6.pdf
+%    pdftk master.pdf cat 139-195 output sta8304-chap7.pdf
+
+%   --- Linear Univariate Time Series Analysis ---
+%   --- Peter's bit
+\include{introduction}
+\include{history}
+\include{wifi}
+\include{fundamentals}
+\include{wlans}
+\include{modes}
+\include{security}
+\include{design}
+\include{troubleshooting}
+\include{cellular}
+\include{trends}
+% \include{othermodels}
+%   --- Ron's bit
+
+\null\newpage
+
+\bibliographystyle{plain}
+\bibliography{zzzpaperzzz}
+\end{document}

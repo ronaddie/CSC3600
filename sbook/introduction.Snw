@@ -1,0 +1,59 @@
+\part{XXX}
+\label{SEC:xxx}
+%\parttoc
+
+<<echo=FALSE>>=
+# Load data sets and set directories, etc
+source("setup.R")
+@
+
+\chapter{Introduction}
+
+\minitoc
+
+\subsection*{Module objectives}
+\typeout{List the objectives of this section}
+
+Upon completion of this module students should be able to:
+\begin{itemize}
+        \item xxx;
+        \item xxx;
+        \item xxx;
+\end{itemize}
+
+\section{Introduction}
+
+This Module introduces 
+
+\section{XXX}
+
+
+\begin{sbexample}
+   \label{xxxxx}
+
+   \begin{figure}
+      \centering
+% <<echo=FALSE,fig=TRUE,width=6,height=8>>=
+% @
+      \caption{xxx)}
+      \label{xxx}
+   \end{figure}
+\end{sbexample}
+<<echo=FALSE>>=
+@
+
+
+\section{Exercises}
+
+\begin{exercises}
+
+\item xxx
+\begin{answer}
+yyy
+\end{answer}
+\end{exercises}
+
+\makeanswers
+
+<<echo=FALSE>>=
+@

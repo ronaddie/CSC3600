@@ -1,0 +1,364 @@
+%%
+%% This is file `macsbcore.sty',
+%% generated with the docstrip utility.
+%%
+%% The original source files were:
+%%
+%% macsb-1.0a.dtx  (with options: `macsbcore')
+%% 
+%% IMPORTANT NOTICE:
+%% 
+%% For the copyright see the source file.
+%% 
+%% Any modified versions of this file must be renamed
+%% with new filenames distinct from macsbcore.sty.
+%% 
+%% For distribution of the original source see the terms
+%% for copying and modification in the file macsb-1.0a.dtx.
+%% 
+%% This generated file may be distributed as long as the
+%% original source files, as listed above, are part of the
+%% same distribution. (The sources need not necessarily be
+%% in the same archive or directory.)
+\def\myfileversion{1.0a}
+\def\myfiledate{5 January 2004}
+\NeedsTeXFormat{LaTeX2e}
+\typeout{Document Style `macsbcore.sty' AJR, v\myfileversion, \myfiledate}
+\newif\if@usqpdf
+\ifx\pdfoutput\undefined\@usqpdffalse\else\@usqpdftrue\fi
+\newif\if@usqafive
+\ifdim\paperwidth=148mm \@usqafivetrue\else\@usqafivefalse\fi
+\newif\if@usqcolourcore
+\if@usqpdf\@usqcolourcoretrue\else\@usqcolourcorefalse\fi
+\DeclareOption{colour}{\@usqcolourcoretrue}
+\DeclareOption{color}{\@usqcolourcoretrue}
+\DeclareOption{nocolour}{\@usqcolourcorefalse}
+\DeclareOption{nocolor}{\@usqcolourcorefalse}
+\newif\if@usqboxes
+\@usqboxesfalse
+\DeclareOption{boxes}{\@usqboxestrue}
+\newif\if@usqhyperref
+\if@usqpdf\@usqhyperreftrue\else\@usqhyperreffalse\fi
+\DeclareOption{hyperref}{\@usqhyperreftrue}
+\DeclareOption{nohyperref}{\@usqhyperreffalse}
+\newif\if@usqminitoc
+\@usqminitoctrue
+\DeclareOption{nominitoc}{\@usqminitocfalse}
+\ProcessOptions
+\if@usqcolourcore
+\if@usqpdf
+\usepackage[pdftex,dvipsnames,usenames]{color} % for pdfLaTeX
+\usepackage{pdfcolmk}%
+% {\typeout{*** Install package pdfcolmk.sty for best results ***}}
+% \else
+% \usepackage[dvips,usenames]{color} % for ordinary LaTeX
+\fi
+\let\colour\color
+\let\textcolour\textcolor
+\let\definecolour\definecolor
+\let\colourbox\colorbox
+\let\fcolourbox\fcolorbox
+\let\DefineNamedColour\DefineNamedColor
+\else% \usepackage[usenames,monochrome,dvips]{color}
+\newcommand{\colour}[1]{}
+\newcommand{\textcolour}[2]{#2}
+\newcommand{\definecolour}[3]{}
+\newcommand{\colourbox}[2]{#2}
+\newcommand{\fcolourbox}[3]{\fbox{#3}}
+\newcommand{\DefineNamedColour}[4]{}
+\fi
+%
+\newcommand{\titlecolour}{\colour{Brown}}
+\newcommand{\sectioncolour}{\colour{blue}}
+\newcommand{\runningcolour}{\colour{Orange}}
+\newcommand{\theoremcolour}{\colour{Plum}}
+\newcommand{\examplecolour}{\colour{OliveGreen}}
+\newcommand{\conventioncolour}{\colour{Red}}
+\newcommand{\magiccolour}{\colour{Plum}}
+\newcommand{\exercisecolour}{\colour{Purple}}
+\newcommand{\activitycolour}{\colour{Brown}}
+\newcommand{\captioncolour}{\colour{Brown}}
+\newcommand{\verbcolour}{\colour{Sepia}}
+\newcommand{\activityboxcolour}{magenta} % note the bare colour
+\newcommand{\footercolour}{\colour{cyan}}
+%
+\DefineNamedColour{named}{BROWN}{cmyk}{0,0.81,1,0.40}
+\DefineNamedColour{named}{Brown}{cmyk}{0,0.81,1,0.40}
+\DefineNamedColour{named}{Orange}{cmyk}{0,0.34,0.78,0.0}
+\DefineNamedColour{named}{DarkBlue}{cmyk}{1,1,0,0.40}
+\newcommand{\itemcolour}{\colour{DarkBlue}}
+\let\usq@verbatim@font\verbatim@font
+\def\verbatim@font{\verbcolour\usq@verbatim@font}
+\def\list#1#2{\ifnum \@listdepth >5\relax \@toodeep
+     \else \global\advance\@listdepth\@ne \fi
+  \rightmargin \z@ \listparindent\z@ \itemindent\z@
+  \csname @list\romannumeral\the\@listdepth\endcsname
+  \def\@itemlabel{\itemcolour #1}\let\makelabel\@mklab \@nmbrlistfalse #2\relax
+  \@trivlist
+  \parskip\parsep \parindent\listparindent
+  \advance\linewidth -\rightmargin \advance\linewidth -\leftmargin
+  \advance\@totalleftmargin \leftmargin
+  \parshape \@ne \@totalleftmargin \linewidth
+  \ignorespaces}
+\renewcommand*\descriptionlabel[1]{\hspace\labelsep
+              \normalfont\bfseries\itemcolour #1}
+\newcommand{\unitno}[1]{\def\@usqunitno{#1}}
+\newcommand{\courseno}[1]{\def\@usqunitno{\textsc{#1}}}
+\newcommand{\faculty}[1]{\def\@usqfaculty{#1}}
+\newcommand{\degree}[1]{\def\@usqdegree{#1}}
+\newcommand{\quals}[1]{\def\@usqquals{#1}}
+\newcommand{\job}[1]{\def\@usqjob{#1}}
+\newcommand{\sbook}[1]{\def\@usqsbook{#1}}
+\newcommand{\apart}[1]{\def\@usqapart{#1}}
+\newcommand{\parttitle}[1]{\def\@usqparttitle{#1}}
+\title{title??}
+\author{author??}
+\courseno{courseno??}
+\faculty{Sciences}
+\sbook{0}
+\apart{0}
+\newcommand{\frontpages}{\frontmatter\maketitle}
+\parskip   = 2ex plus 1ex minus 1ex
+\parindent = 0ex
+\raggedbottom
+\if@usqafive
+\AtEndDocument{
+\typeout{**** print on A4 use psnup -2 -s1}
+}
+\ifnum\@ptsize=0
+\setlength{\textwidth}{345pt}\setlength\hoffset{-34pt}
+\else\ifnum\@ptsize=1
+\setlength{\textwidth}{360pt}\setlength\hoffset{-42pt}
+\else
+\setlength{\textwidth}{390pt}\setlength\hoffset{-57pt}
+\fi\fi
+\setlength{\textheight}{480pt}\setlength\voffset{-58pt}
+\setlength{\oddsidemargin}{0pt}
+\setlength{\evensidemargin}{0pt}
+\fi
+\if@usqafive\let\@usqmarginpar\footnote
+\else\let\@usqmarginpar\marginpar\fi
+\renewcommand{\marginpar}[1]{\@usqmarginpar{\footnotesize\raggedright\sf #1}}
+\newcommand{\forceppage}{}
+\newcommand{\forceepage}{}
+\pagestyle{headings}
+\renewcommand{\MakeUppercase}[1]{\textsf{\runningcolour #1}}
+\def\@oddfoot{\footercolour\hfill\footnotesize\copyright\sf\ USQ, \today}
+\def\@evenfoot{\footercolour\footnotesize\copyright\sf\ USQ, \today\hfill}
+\setlength{\hfuzz}{3pt}
+\setlength{\vfuzz}{1pt}
+\newcommand{\sectionfont}{\sectioncolour\sffamily}
+\newcommand{\mtctitlefont}{\relax\sffamily\relax}
+\newcommand{\titlefont}{\titlecolour\sffamily}
+\newcommand{\frontfont}{\titlecolour\sffamily}
+\renewcommand\partname{\titlefont Part}
+\renewcommand\contentsname{\titlefont Table of Contents}
+\renewcommand\bibname{\titlefont Bibliography}
+\renewcommand\indexname{\titlefont Index}
+\renewcommand{\figurename}{\captioncolour Figure}
+\renewcommand{\tablename}{\captioncolour Table}
+\renewcommand\chaptername{Module}
+\let\usq@@makechapterhead\@makechapterhead
+\renewcommand{\@makechapterhead}[1]{{\titlefont\usq@@makechapterhead{#1}}}
+\let\usq@@startsection\@startsection
+\renewcommand{\@startsection}[6]%
+{\usq@@startsection{#1}{#2}{#3}{#4}{#5}{#6\sectionfont}}
+%%%%%%%%%%%% Examples and exercises %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\excaption}[1]{\addcontentsline{exz}{exercise}{#1}}
+\newcommand{\xmcaption}[1]{\addcontentsline{xmp}{sbexample}{#1}}
+\newcommand{\cnvcaption}[1]{\addcontentsline{cnv}{convention}{#1}}
+\newcommand{\magcaption}[1]{\addcontentsline{mag}{magic}{#1}}
+%
+\newcommand{\examplename}{Example}
+\newcommand{\examplesname}{Example}
+\newcommand{\conventionname}{Convention}
+\newcommand{\magicname}{Magic}
+\newcounter{convention}
+\newtheorem{Convention}{Convention}
+\newenvironment{convention}[1]{%
+\list{\refstepcounter{convention}%
+\cnvcaption{{\bf Convention \theconvention} #1\dotfill \ }%
+\protected@xdef\@currentlabel{\theconvention}%
+\textbf{\conventioncolour\conventionname~\theconvention:}}{}\item \textbf{\conventioncolour #1}\\}%
+{\par\noindent\conventioncolour\rule{0.3\textwidth}{0.2ex}\endlist}
+%
+\newcounter{magic}
+\newtheorem{Magic}{Magic}
+\newenvironment{magic}[1]{%
+\list{\refstepcounter{magic}%
+\magcaption{{\bf Magic \themagic} #1\dotfill \ }%
+\protected@xdef\@currentlabel{\themagic}%
+\textbf{\magiccolour\magicname~\themagic:}}{}\item \textbf{\magiccolour #1}\\}%
+{\par\noindent\magiccolour\rule{0.3\textwidth}{0.2ex}\endlist}
+%
+\newcounter{example}[chapter]
+\renewcommand{\theexample}{\thechapter.\arabic{example}}
+\newenvironment{examples}%
+{\list{%\refstepcounter{example}
+\stepcounter{example}\protected@xdef\@currentlabel{\theexample}%
+\textbf{\examplecolour\examplesname~\theexample:}}{}\changeenumerate}%
+{\endlist}
+\newenvironment{example}[1][]%
+{\def\examplesname{\examplename}\examples\item \textbf{\examplecolour #1}}%
+{\par\noindent\examplecolour\rule{0.3\textwidth}{0.2ex}\endexamples}
+\newtheorem{sbExample}{Example}[chapter]
+\newenvironment{sbexample}[1]{%
+\newcommand{\sbex@gobble}[1]{\@ifnextchar\par{\sbex@gobble}{}}%
+\def\examplesname{\examplename}\examples\item \textbf{\examplecolour #1\\}%
+\refstepcounter{sbExample}%
+\xmcaption{{\bf Example \thesbExample} #1\dotfill \ }\@ifnextchar\par{\sbex@gobble}{}}%
+{\par\noindent\examplecolour\rule{0.3\textwidth}{0.2ex}\endexamples}
+\newenvironment{solution}{\paragraph{\examplecolour Solution:}}{\par}
+\newtheorem{sbExercise}{Exercise}[chapter]
+\newcommand{\exercisename}{Exercise}
+\newcommand{\exercisesname}{Ex.}
+\newenvironment{exercises}%
+{\list{\refstepcounter{sbExercise}%
+\protected@xdef\@currentlabel{\thesbExercise}%
+% \excaption{{\bf Exercise \thesbExercise} \dotfill\ }%
+\textbf{\exercisecolour\exercisesname~\thesbExercise:}}{}\changeenumerate}%
+{\endlist}
+\newenvironment{exercise}[1]{%
+\newcommand{\ex@gobble}[1]{\@ifnextchar\par{\ex@gobble}{}}%
+\def\exercisesname{\exercisename}\exercises\item \textbf{\exercisecolour #1\\}%
+\excaption{{\bf Exercise \thesbExercise} #1\dotfill \ }\@ifnextchar\par{\ex@gobble}{}}%
+{\par\noindent\exercisecolour\rule{0.3\textwidth}{0.2ex}\endexercises}
+\newcommand{\listofexamples}{\@starttoc{xmp}}
+\newcommand{\listofconventions}{\@starttoc{cnv}}
+\newcommand{\listofmagic}{\@starttoc{mag}}
+\newcommand{\l@convention}[2]{\par\noindent#1 {\itshape #2}}
+\newcommand{\l@magic}[2]{\par\noindent#1 {\itshape #2}}
+\newcommand{\l@sbexample}[2]{\par\noindent#1 {\itshape #2}}
+\newcommand{\l@exercise}[2]{\par\noindent#1 {\itshape #2}}
+\newcommand{\listofexercises}{\@starttoc{exz}}
+\newcommand{\listoffigs}{\@starttoc{lof}}
+\newcommand{\listoftabs}{\@starttoc{lot}}
+\newcommand{\answername}{Answer}
+\newenvironment{answer}{%
+    \label{aNs:\theexample} % hopefully points to the exercise number
+    \paragraph{\examplecolour\answername:}\small}{\par}
+\newcommand\openexanswers{}
+\newcommand\closeexanswers{}
+\newcommand\answersname{}
+\newcommand\makeanswers{}
+\newcommand{\changeenumerate}{
+\def\theenumi{\alph{enumi}}
+\def\theenumii{\roman{enumii}}
+\def\theenumiii{\Alph{enumiii}}
+\def\theenumiv{\arabic{enumiv}}
+\def\labelenumi{(\theenumi)}
+\def\labelenumii{\theenumii.}
+\def\labelenumiii{\theenumiii.}
+\def\labelenumiv{\theenumiv.}
+}
+\newtheorem{theorem}{\theoremcolour Theorem}[chapter]
+\newtheorem{definition}[theorem]{\theoremcolour Definition}
+\newtheorem{corollary}[theorem]{\theoremcolour Corollary}
+\newtheorem{lemma}[theorem]{\theoremcolour Lemma}
+\newtheorem{proposition}[theorem]{\theoremcolour Proposition}
+\newenvironment{proof}%
+{\par\textbf{\theoremcolour Proof:}}%
+{\hfil\penalty50\quad\mbox{}\hfil%
+\mbox{\theoremcolour$\spadesuit$}\penalty-10000\par}
+\newcounter{activity}[chapter]
+\renewcommand{\theactivity}{\thechapter.\Alph{activity}}
+\newcommand{\activityfont}{\activitycolour\bfseries}
+\if@usqboxes % boxed version (should colour this)
+\newcommand{\usq@ctivity}[2]{ \begin{center}
+    \fcolourbox{\activityboxcolour}{white}{
+     \begin{minipage}{0.8\textwidth}\refstepcounter{activity}
+      \paragraph{\activitycolour #2~\theactivity:}
+ \activitycolour #1
+    \end{minipage} }
+    \end{center} }
+\else % list like version
+\newcommand{\usq@ctivity}[2]{\refstepcounter{activity}
+    \begin{description}\item[\activityfont #2~\theactivity]
+    \activitycolour #1
+    \end{description} }
+\fi
+\newcommand{\activity}[1]{\usq@ctivity{#1}{Activity}}
+\newcommand{\reading}[1]{\usq@ctivity{#1}{Reading}}
+\if@usqminitoc
+\if@usqhyperref\usepackage{minitoc-hyper}
+\renewcommand\mtcfont{\large\rmfamily\upshape\bfseries\titlecolour}
+\else\usepackage{minitoc}
+\renewcommand\mtcfont{\large\rmfamily\upshape\bfseries\titlecolour}
+\fi
+\setcounter{tocdepth}{0}          % depth of table of contents
+\setcounter{parttocdepth}{1}      % depth of Contents for parts
+\setcounter{minitocdepth}{2}      % depth of Contents for modules
+\setlength{\mtcindent}{2ex}       % indentation of minitocs
+\renewcommand{\ptctitle}{\partname{} contents}
+\renewcommand{\mtctitle}{\chaptername{} contents}
+\else % define some dummies
+\newcommand{\dominitoc}{}
+\newcommand{\minitoc}{}
+\newcommand{\parttoc}{}
+\fi
+\makeindex
+\newcommand{\idx}[1]{#1\index{#1}}
+\newcommand{\emidx}[1]{\emph{#1}\index{#1|emph}}
+\newcommand{\bfidx}[1]{\textbf{#1}\index{#1|textbf}}
+\renewcommand\floatpagefraction{.75}
+\usepackage{graphicx}
+\usepackage{alltt}
+\newlength{\widewidth}
+\setlength{\widewidth}{\textwidth}
+\addtolength{\widewidth}{\marginparwidth}
+\addtolength{\widewidth}{-3em}
+\newenvironment{matpici}[1]{\noindent
+\begin{tabbing}
+\includegraphics[width=0.55\widewidth]{#1}%
+\begin{minipage}[b]{0.45\widewidth}
+\alltt\footnotesize
+}{%
+\end{minipage}
+\end{tabbing} }
+\newcommand{\pici}[1]{\begin{center}
+\includegraphics[width=0.8\textwidth]{#1}
+\end{center}}
+\newcommand{\pic}[1]{\begin{center}
+\includegraphics[width=0.5\textwidth]{#1}
+\end{center}}
+\if@usqhyperref
+% \usepackage[pagebackref]{hyperref}
+\usepackage{hyperref}
+\hypersetup{colorlinks,linkcolor=red,citecolor=red,pagecolor=red,%
+            urlcolor=magenta,filecolor=magenta,breaklinks,%
+            dvips,bookmarks,bookmarksopen}
+\fi
+\renewcommand{\vec}[1]{\mathbf{#1}}
+\ifx\veg\@undefined\newcommand{\veg}[1]{\mbox{\boldmath$#1$}} \fi
+\ifx\grad\@undefined\newcommand{\grad}{\mbox{\boldmath$\nabla$}} \fi
+\ifx\dive\@undefined\newcommand{\dive}{\mbox{\boldmath$\nabla\cdot$}} \fi
+\ifx\curl\@undefined\newcommand{\curl}{\mbox{\boldmath$\nabla$}\times} \fi
+\ifx\delsq\@undefined\newcommand{\delsq}{{\nabla^2}} \fi
+\ifx\matlab\@undefined\newcommand{\matlab}{\textsc{Matlab}} \fi
+\ifx\D\@undefined\newcommand{\D}[2]{\frac{\partial #2}{\partial #1}} \fi
+\ifx\DD\@undefined\newcommand{\DD}[2]{\frac{\partial^2 #2}{\partial #1^2}} \fi
+\ifx\Dn\@undefined\newcommand{\Dn}[3]{\frac{\partial^{#1} #3}{\partial#2^{#1}}} \fi
+% \ifx\iint\@undefined\newcommand{\iint}{\int\!\!\!\int}\fi
+% \ifx\iiint\@undefined\newcommand{\iiint}{\int\!\!\!\int\!\!\!\int}\fi
+\ifx\R\@undefined\newcommand{\R}{{\rm I\!\!R}}\fi
+\ifx\pr\@undefined\newcommand{\pr}[1]{\Pr\left\{#1\right\}}\fi
+\ifx\tr\@undefined\newcommand{\tr}[1]{#1^{\mathsf{T}}}\fi
+\ifx\adj\@undefined\newcommand{\adj}[1]{{#1}^{\dagger}}\fi
+\ifx\cc\@undefined\newcommand{\cc}[1]{\overline{#1}}\fi
+\ifx\Ord\@undefined\newcommand{\Ord}[1]{{\mathcal O}\big(#1\big)}\fi
+\ifx\rat\@undefined\newcommand{\rat}[2]{{\textstyle\frac{#1}{#2}}}\fi
+\ifx\half\@undefined\newcommand{\half}{{\rat{1}{2}}}\fi
+\ifx\third\@undefined\newcommand{\third}{{\rat{1}{3}}}\fi
+\ifx\quart\@undefined\newcommand{\quart}{{\rat{1}{4}}}\fi
+\ifx\slosh\@undefined\newcommand{\slosh}{\char92}\fi % prints the slosh when in tt font
+\def\Var{\mathop{\operator@font Var}\nolimits}
+\def\spn{\mathop{\operator@font span}\nolimits}
+\def\diag{\mathop{\operator@font diag}\nolimits}
+\ifx\ode\@undefined\newcommand{\ode}{\textsc{ode}}\fi
+\ifx\pde\@undefined\newcommand{\pde}{\textsc{pde}}\fi
+\newsavebox{\ajrquoted}
+\newenvironment{quoted}[1]{\begin{quote}\savebox{\ajrquoted}{\em #1}}%
+{\hfil\penalty50\quad\mbox{}\hfil\usebox{\ajrquoted}\penalty-10000\end{quote}}
+\endinput
+%%
+%% End of file `macsbcore.sty'.

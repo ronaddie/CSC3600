@@ -1,0 +1,226 @@
+%%
+%% This is file `macsb.sty',
+%% generated with the docstrip utility.
+%%
+%% The original source files were:
+%%
+%% macsb-1.0a.dtx  (with options: `macsb')
+%% 
+%% IMPORTANT NOTICE:
+%% 
+%% For the copyright see the source file.
+%% 
+%% Any modified versions of this file must be renamed
+%% with new filenames distinct from macsb.sty.
+%% 
+%% For distribution of the original source see the terms
+%% for copying and modification in the file macsb-1.0a.dtx.
+%% 
+%% This generated file may be distributed as long as the
+%% original source files, as listed above, are part of the
+%% same distribution. (The sources need not necessarily be
+%% in the same archive or directory.)
+\def\myfileversion{1.0a}
+\def\myfiledate{5 January 2004}
+\NeedsTeXFormat{LaTeX2e}
+\typeout{Document Style `macsb.sty' AJR, v\myfileversion, \myfiledate}
+\newif\if@usqcolour
+\@usqcolourfalse
+\newif\if@usqhelv
+\@usqhelvtrue
+\newif\if@usqeuler
+\@usqeulerfalse
+\newif\if@usqmakeans
+\@usqmakeansfalse
+\DeclareOption{colour}{\@usqcolourtrue}
+\DeclareOption{color}{\@usqcolourtrue}
+\DeclareOption{nohelv}{\@usqhelvfalse}
+\DeclareOption{euler}{\@usqeulertrue}
+\DeclareOption{Euler}{\@usqeulertrue}
+\DeclareOption{makeanswers}{\@usqmakeanstrue}
+\ProcessOptions
+\if@usqeuler
+\usepackage[mathbf,mathcal]{euler}
+    \usepackage[oldstyle-equation-numbers]{beton}
+\fi
+\newcommand{\twolines}{\noindent%
+\rule{0.61\textwidth}{0.25ex}%
+\raisebox{-0.5ex}{\rule{0.39\textwidth}{1.25ex}}\par}
+\newcommand{\twoendlines}{\noindent%
+\raisebox{-0.5ex}{\rule{0.39\textwidth}{1.25ex}}\par%
+\rule{0.61\textwidth}{0.25ex}}
+\if@usqcolour\usepackage[colour,boxes]{macsbcore}
+\else\usepackage[boxes]{macsbcore}
+\fi
+\if@usqeuler
+    % \renewcommand{\iint}{\int\!\!\int}
+    % \renewcommand{\iiint}{\int\!\!\int\!\!\int}
+    \renewcommand{\R}{{\rm I\!R}}
+\fi
+\if@usqhelv
+\newcommand{\hlvhuge}{\fontfamily{phv}\fontseries{m}\fontsize{30}{40}\selectfont}
+\newcommand{\hlvHuge}{\fontfamily{phv}\fontseries{m}\fontsize{50}{60}\selectfont}
+\newcommand{\hlvHUGE}{\fontfamily{phv}\fontseries{m}\fontsize{100}{120}\selectfont}
+\renewcommand{\titlefont}{\titlecolour\fontfamily{phv}\selectfont}
+\renewcommand{\sectionfont}{\sectioncolour\fontfamily{phv}\selectfont}
+\renewcommand{\frontfont}{\titlecolour\fontfamily{phv}\selectfont}
+\def\@makechapterhead#1{%
+  \vspace*{50\p@}%
+  {\parindent \z@ \raggedright \normalfont
+    \ifnum \c@secnumdepth >\m@ne
+      \if@mainmatter
+        {\titlecolour\hlvhuge \@chapapp\raisebox{-5mm}{\hlvHUGE~\thechapter}}
+        \par\nobreak
+        \vskip 20\p@
+      \fi
+    \fi
+    \interlinepenalty\@M
+    {\titlefont\Huge \bfseries #1}\par\nobreak
+    \vskip 20\p@ \titlecolour\twolines\par\nobreak % for ugly line
+    \vskip 40\p@
+  }}
+\def\@part[#1]#2{%
+    \ifnum \c@secnumdepth >-2\relax
+      \refstepcounter{part}%
+      \addcontentsline{toc}{part}{\thepart\hspace{1em}#1}%
+    \else
+      \addcontentsline{toc}{part}{#1}%
+    \fi
+    \markboth{}{}%
+    {\centering
+     \interlinepenalty \@M
+     \normalfont
+     \ifnum \c@secnumdepth >-2\relax
+       {\titlecolour\hlvhuge\bfseries\partname \hlvHuge\bfseries~\thepart}
+       \par
+       \vskip 20\p@
+     \fi
+     {\titlecolour\hlvHuge \bfseries #2\par}
+     \vskip 20\p@\titlecolour\twolines\par}%
+     \vfil\newpage\null\newpage}
+\renewcommand\tableofcontents{%
+    \chapter*{\titlecolour\hlvhuge\contentsname}
+    \@mkboth{\MakeUppercase\contentsname}{\MakeUppercase\contentsname}
+    {\titlecolour\twolines}\par\vskip 20\p@
+    \@starttoc{toc}%
+    }
+\fi % end of if helv
+\if@usqmakeans
+\usepackage{fancyvrb}
+\def\answer{\FV@Environment{}{answer}}
+\def\FVB@answer{%
+  \label{aNs:\theexample} % hopefully points to the exercise number
+  \immediate\write\exanswers{\noexpand\item[\noexpand\ref{aNs:\theexample}]}
+  % following is adapted from VerbatimOut in fancyvrb
+  \@bsphack
+  \begingroup
+    \FV@UseKeyValues
+    \FV@DefineWhiteSpace
+    \def\FV@Space{\space}%
+    \FV@DefineTabOut
+    \def\FV@ProcessLine{\immediate\write\exanswers}%
+    \let\FV@FontScanPrep\relax
+    \let\@noligs\relax
+    \FV@Scan}
+\def\FVE@answer{\endgroup\@esphack}
+\DefineVerbatimEnvironment{answer}{answer}{}
+\renewcommand\openexanswers{%
+\immediate\openout\exanswers\jobname.ans\relax
+\immediate\write\exanswers{\noexpand\begin{description}\noexpand\changeenumerate}
+}
+\renewcommand\closeexanswers{%
+\immediate\write\exanswers{\noexpand\end{description}}
+\immediate\closeout\exanswers
+}
+\AtBeginDocument{\newwrite\exanswers
+\openexanswers
+}
+\AtEndDocument{\closeexanswers
+}
+\renewcommand\answersname{%
+\subsection{\answername{}s to selected \exercisename{}s}
+}
+\typeout{macsb: renewcommand answersname to change makeanswer heading}
+\renewcommand\makeanswers{%
+\closeexanswers
+\answersname
+\input{\jobname.ans}
+\openexanswers
+}
+\fi % end of makeanswers stuff
+\renewcommand{\forceppage}{\newpage\noindent}
+\renewcommand{\forceepage}{}
+\renewcommand{\frontpages}{
+\frontmatter
+
+\thispagestyle{empty}
+
+\noindent{\frontfont\Huge \@usqunitno}
+
+\vspace*{6ex}\noindent
+\begin{minipage}{0.80\textwidth}
+\raggedright {\frontfont\Huge \@title}
+\end{minipage}
+
+{\titlecolour\twolines}
+
+\noindent{\frontfont\Large Faculty of~\@usqfaculty}
+
+\ifx\@usqdegree\@undefined\else\noindent{\frontfont \@usqdegree}\par\fi
+
+\vfill
+
+\noindent{\frontfont\huge Study Book\ifnum\@usqsbook >1 \@usqsbook\fi}
+\par
+\ifnum\@usqapart>0 %
+\noindent{\frontfont\Large Part \@usqapart: \@usqparttitle}\par \fi
+
+\vfill
+
+\noindent
+{\frontfont
+\begin{tabbing}
+Written by \\[2ex]
+\@author\ \\
+\ifx\@usqquals\@undefined\ \\ \else \@usqquals\\ \fi
+\ifx\@usqjob\@undefined\ \\ \else \@usqjob\\ \fi
+Faculty of~\@usqfaculty\\
+The University of Southern Queensland
+\end{tabbing}
+}
+\newpage
+{\frontfont\small
+\phantom{nil}
+\vfill
+
+\noindent
+\begin{tabbing}
+\copyright\ The University of Southern Queensland, \today.\\[2ex]
+Distributed by\\[2ex]
+% \IfFileExists{dec.eps}%
+% {\includegraphics[0,0][3in,.5in]{dec}\\ }{}
+Distance Education Centre\\
+The University of Southern Queensland\\
+Toowoomba Qld 4350\\
+Australia\\[4ex]
+http://www.usq.edu.au
+\end{tabbing}
+
+\vspace{6ex}\noindent
+Copyrighted materials reproduced herein are used under the provisions of the
+Copyright Act 1968 as amended, or as a result of application to the
+copyright owner.
+
+\vspace{2ex}\noindent
+No part of this publication may be reproduced, stored in a retrieval system
+or transmitted in any form or by any means electronic, mechanical, photocopying,
+recording or otherwise without prior permission.
+
+\vspace{2ex}\noindent
+Produced using {LaTeX} in a USQ style by the School of Agricultural, Computational, and Engineering Sciences.
+}
+\newpage % end of copyright page
+}
+\endinput
+%%
+%% End of file `macsb.sty'.

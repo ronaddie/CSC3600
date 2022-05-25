@@ -1,0 +1,12 @@
+alias e="gvim -p csc8360sb.tex al makefile bmake.sh history.tex wifi.tex fundamentals.tex wlans.tex modes.tex security.tex design.tex troubleshooting.tex cellular.tex trends.tex &"
+alias v="make view"
+alias x="make xview"
+alias xa="make xviewans"
+alias p="make csc8360sb.pdf"
+alias b="bibtex csc8360sb"
+alias pr="make print"
+alias sa="more al"
+alias wcsc8360sb="if [ -d /home/addie/courses/CSC8360/sbook ]; then cd /home/addie/courses/CSC8360/sbook; else cd /home/addie/courses/CSC8360; cvs -d /home/addie/courses/CSC8360/CVS checkout sbook ; cd sbook; fi; source ./al"
+export CVSROOT=/home/addie/courses/CSC8360/CVS
+./bmake.sh &
+newpaper -upd csc8360sb

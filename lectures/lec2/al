@@ -1,0 +1,12 @@
+alias e="gvim -p csc8360_wifi_lec.qb al makefile bmake.sh &"
+alias v="make view"
+alias x="make xview"
+alias xa="make xviewans"
+alias p="make csc8360_wifi_lec.pdf"
+alias b="bibtex csc8360_wifi_lec"
+alias pr="make print"
+alias sa="more al"
+alias wcsc8360_wifi_lec="if [ -d /home/addie/courses/CSC8360/lectures/lec2 ]; then cd /home/addie/courses/CSC8360/lectures/lec2; else cd /home/addie/courses/CSC8360/lectures; cvs -d /home/addie/courses/CSC8360/lectures/CVS checkout lec2 ; cd lec2; fi; source ./al"
+export CVSROOT=/home/addie/courses/CSC8360/lectures/CVS
+./bmake.sh &
+newpaper -upd csc8360_wifi_lec

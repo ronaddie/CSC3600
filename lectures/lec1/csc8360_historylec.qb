@@ -1,0 +1,56 @@
+#%qb Quickbeam slide presn template, qb_template.tex (title)
+#\documentclass[18pt]{beamer}
+#\usepackage[utf8]{inputenc}
+# 
+#\title{Introduction to Wireless and the course}
+#\author{Zhongwei Zhang}
+#\institute{University of Southern Queensland}
+#\date{2022}
+# 
+#%  \usebackgroundtemplate{
+#%  \includegraphics[width=\paperwidth,
+#%  height=\paperheight]{Images/background.jpg}
+#%  }
+#
+#% This seems to work
+#\setbeamerfont{frametitle}{size=\Huge}
+#
+#\definecolor{exampleColor}{rgb}{1,1,.8}
+# 
+#\usepackage{hyperref}
+#
+#\begin{document}
+#\frame{\titlepage}
+# 
+
+Welcome to the Course
+---------------------
+*	Welcome to
+	*	CSC8360: Wireless Networking
+
+Course Team
+-----------
+@imageLeft 0.2 zhongwei.jpg 0.1
+*	Examiner
+	*	Lectures, Tutorials, Marking, Consultations.
+	*	Zhongwei Zhang
+	*	Room: D219 Phone: +61 7 46315549
+
+
+Lectures
+--------
+*	Tuesday Toowoomba T125
+	*	1pm-2pm
+	*	10 minute break.
+	*	2pm-3pm
+*	recorded and placed on the study desk.
+
+Prac
+----
+*	Monday 11am - 12pm
+	*	Toowoomba D112 (I will be located there)
+	*	Springfield A408 (By Zoom video conferencing)
+	*	Your Home PC or Laptop (by Zoom - see later slides)
+*	Thursday 1pm - 2pm
+	*	Toowoomba D113
+
