@@ -74,6 +74,54 @@ The only regulation is that no transmitter should use more than about 10 milliam
 
 This allowed for the wifi standards: 802.11a, b, \dots.
 
+\subsection{Shared spectrum}
+
+The natural measure of capacity, of any transmission medium, is transmission speed, typically
+measured in bits per second (bits/s). To enable us to discuss transmission speed in a 
+natural, intuitive manner, we also use mega-bits per second (Mbits/s), giga-bits per second (gb/s)
+and so on. Note that although it would also make sense to use bytes per second, this is not
+common practice, and therefore should geneally be avoided.
+
+The natural measure of {\em size} of a wireless medium, on the other hand, is the
+width of the range of frequencies that it makes use of, in cycles per second. Thus,
+if a wireless technology uses frequencies from 20 million cycles per second (20 MHz)
+to 100 million cycles per second (100 MHz), we say it has a {\em bandwidth} of
+80 MHz.
+
+It is also common to use the term {\em bandwidth} to refer to the transmission capacity of
+a medium. This is not strictly correct, and because the term already has a clear and precise
+meaning, it is potentially confusing. However, the use of ``bandwidth'' reveals that there
+was a widespread perception for a long time that the ``natural'' transmission capacity of 
+a wireless medium is approximately the same as its bandwidth in the strict sense of the
+width of the range of frequencies it uses. 
+
+Amazingly, the precise relationship between transmission capacity and bandwidth was derived
+in 1948, before the explosion in use of wireless communication. The formula developed by 
+Shannon\index{Shannon} gives the maximum data rate in the presence of noise,
+as follows:
+$$
+C \leq B \log_{2} (1 + S/N)
+$$
+where $C$ is the channel capacity (transmission speed in bits/s), $B$ is the bandwidth, and $S/N$ is the 
+signal-to-noise ratio (SNR)\index{signal-to-noise ratio (SNR)},
+which is the ratio of the power levels of the signal and the noise. 
+
+At the same time when spectrum for wireless communication was ``liberated''
+by this de-regulation, the mathematical and technical breakthroughs for making
+optimal use of this spectrum were developed. 
+
+According to the formula of Shannon and Hartley, the maximum possible
+bit-rate through a wireless medium is not limited to the bandwidth, in cycles per
+second, but can be much higher. It depends, crucially, on the signal to noise ratio.
+
+When the transmitter and receiver of a wireless signal are close together, the
+signal to noise ratio will be higher and hence so will be the transmission capacity.
+This means that as the density of users of wireless spectrum goes up, and the demand for
+spectrum increases, we can achieve higher and higher efficiency in its use by 
+decreasing the average distance between transmitters and receivers. To some extent
+this will occur naturally, as the number of base stations or wireless access points
+which gather the communication from end users increases.
+
 \section{Where Wireless is Heading}
 
 Some general trends in wireless communication can be observed. 
@@ -82,5 +130,4 @@ Higher and higher frequencies are coming into regular use. These higher frequenc
 as being more easily blocked by obstacles, or atmospheric conditions. Also, because the wavelength
 of higher frequency signals is smaller than 1cm, and in some cases just a few millimetres, aerial designs need
 to be more complex in order to receive an adequate strength signal. However, a major advantage of higher frequencies
-is that as we move up the spectrum, the {\em quantity} of bandwidth (this term will be explained later) becomes
-dramatically larger.
+is that as we move up the spectrum, the {\em quantity} of bandwidth  becomes dramatically larger.

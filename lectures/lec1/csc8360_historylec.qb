@@ -72,7 +72,7 @@ Chronology 1
 1804 & Joseph Fourier discovers all signals can be decomposed into frequencies \\
 1820 & Hans Christian Orsted discovers electromagnetic fields \\
 1831 & Michael Faraday discovers electromagnetic induction \\
-1864 & James Clerk Maxwell discovers the partial differential equations for electromagnetic waves
+1864 & James Clerk Maxwell discovers the equations for electromagnetic waves
 	(light)\\
 \hline
 \end{tabular}
@@ -86,14 +86,14 @@ Chronology 2
 \hline
 \bf Year & \bf Discovery / Development \\
 \hline
-1888 & Hertz produces, transmits, and receivs electromagnetic waves \\
+1888 & Hertz produces, transmits, and receives electromagnetic waves \\
 1895 & Marconi transmits and receives a coded message at a distance of 1.75 miles \\
 1899 & Marconi sends the first international wireless message from England to France\\
 1923 & The decibel (1/10th of a bel, after A. G. Bell, inventor of the telephone) used to express loss (of power) \\
 1924 & The mobile telephone invented by Bell Telephone and introduced to NYC police \\
 \hline
 \end{tabular}
-Wireless Chronology Part 2 (Microwave Journal (\url{microwavejournal.com})\label{chronology}
+Wireless Chronology Part 2 (Microwave Journal (\url{microwavejournal.com}))\label{chronology}
 
 Chronology 3
 ----------
@@ -113,7 +113,7 @@ Chronology 3
 1997 & First 802.11 standard for wifi released by IEEE \\
 \hline
 \end{tabular}
-Wireless Chronology Part 2 (Microwave Journal (\url{microwavejournal.com})\label{chronology}
+Wireless Chronology Part 2 (Microwave Journal (\url{microwavejournal.com}))\label{chronology}
 
 Mobile Telephony
 ----------------
@@ -134,7 +134,7 @@ means that the signals of our neighours, and fellow citizens, cause less interfe
 so long as they are distant.\\[5mm]
 %
 So, we subdivide the domain where communication is taking
-place into {\em cells}. The frequencies in use can then be re-used in cells that
+place into {\em cells}. The frequencies in use can then be {\em re-used} in cells that
 are not too close.\\[5mm]
 
 Wireless LANs
@@ -143,18 +143,39 @@ Let's call the history of wireless since the introduction of the Internet {\em m
 %
 In 1985, the idea that some wireless spectrum can be {\em unlicensed} was introduced.\\[5mm]
 %
-The only regulation is that no transmitter should use more than about 10 milliamps.\\[5mm]
+The only regulation is that no transmitter should use more than $\approx 10$ milliamps.\\[5mm]
 %
-This allowed for the wifi standards: 802.11a, b, \dots.
+The wifi standards: 802.11a, b, \dots.
+
+Channel Capacity
+---------------
+#\large
+Shannon\index{Shannon} gives the maximum data rate in the presence of noise,
+as follows:
+$$
+C \leq B \log_{2} (1 + S/N)
+$$
+where $C$ is the channel capacity (transmission speed in bits/s), $B$ is the bandwidth, and $S/N$ is the 
+signal-to-noise ratio (SNR)\index{signal-to-noise ratio (SNR)},
+which is the ratio of the power levels of the signal and the noise. 
+
+Shared Spectrum
+---------------
+#\large
+As the density of users of wireless spectrum goes up, 
+we can achieve better efficiency by 
+closer spacing of transmitters and receivers.\\[5mm]
+This occurs naturally, as the number of base stations or wireless access points
+increase.\\[5mm]
+{\em Shared use} of spectrum is much more efficient than allocated or regulated use.
+Star-link is a great example of this.
 
 Where Next
 ------
-Some general trends in wireless communication can be observed. \\[5mm]
 %
-Higher and higher frequencies are coming into regular use. Higher frequencies 
-are more easily blocked by obstacles, or atmospheric conditions. \\[5mm]
+Higher frequencies are more in use. 
+More subject to interference by obstacles, or the atmosphere. \\[5mm]
 %
 Aerial designs need to be more complex. \\[5mm]
 %
-However, the {\em quantity} of bandwidth (this term will be explained later) becomes
-dramatically larger.
+However, the {\em quantity} of bandwidth  becomes dramatically larger.
