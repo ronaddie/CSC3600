@@ -22,6 +22,15 @@
 #\begin{document}
 #\frame{\titlepage}
 # 
+The Role of Standards
+---------------------
+*	Some standards start as a commercial product
+	*	Ethernet (Xerox)
+	*	CSMA (Qualcom)
+	*	Might still become ``official'' standards (e.g. ethernet)
+*	Others are guided by a standards organisation
+	*	E.g. GSM (European standard for mobile phones)
+	* Also adopted in Australia
 
 WiFi and 802.11 Regulations, Standards, Organizations
 ---------------------
