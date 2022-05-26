@@ -1,38 +1,38 @@
 .SUFFIXES : .dvi .tex .bbl .ind .aux .oldaux .html .ps .m .eps .pdf .bsh .c .pl .java .class .glo .gls .idx .glo .gls .dia .xml .Snw .qb
 # PRESERVE the following lines when applying newpaper
-TEX1FILES = csc8360sb.tex
+TEX1FILES = csc8360_wlans_lec.tex
 TEX2FILES = 
 TEXFILES = $(TEX1FILES) $(TEX2FILES)
-BIBFILES = csc8360sb.bib
-BBLFILES = csc8360sb.bbl
+BIBFILES = csc8360_wlans_lec.bib
+BBLFILES = csc8360_wlans_lec.bbl
 SRCFILES = $(TEXFILES) makefile $(BIBFILES) $(BBLFILES)
 TEMPLATEDIR = ${templatesdir}
 BINDIR = ${HOME}/bin
 DOCFILES = README
 GRAPHICSFILES =
 TGZFILES = $(SRCFILES) $(GRAPHICSFILES) $(BIBFILES)
-EXPORTFILES = $(TEXFILES) $(BBLFILES) $(DOCFILES) $(BIBFILES) csc8360sb
-EXPORTFILES2 = csc8360sb.tgz
-MINIEXPORTFILES = csc8360sb.pdf csc8360sb.html csc8360sb
-GENERATEDFILES = csc8360sb.log csc8360sb.ps csc8360sb.aux \
-                 csc8360sb.pdf csc8360sb.tgz \
-                 csc8360sb.minitgz makefile.new csc8360sb.blg \
-                 csc8360sb.bbl csc8360sb.tex~ csc8360sb.oldaux \
+EXPORTFILES = $(TEXFILES) $(BBLFILES) $(DOCFILES) $(BIBFILES) csc8360_wlans_lec
+EXPORTFILES2 = csc8360_wlans_lec.tgz
+MINIEXPORTFILES = csc8360_wlans_lec.pdf csc8360_wlans_lec.html csc8360_wlans_lec
+GENERATEDFILES = csc8360_wlans_lec.log csc8360_wlans_lec.ps csc8360_wlans_lec.aux \
+                 csc8360_wlans_lec.pdf csc8360_wlans_lec.tgz \
+                 csc8360_wlans_lec.minitgz makefile.new csc8360_wlans_lec.blg \
+                 csc8360_wlans_lec.bbl csc8360_wlans_lec.tex~ csc8360_wlans_lec.oldaux \
                  makefilehelp ftpcmds makefile.template .CODE
 BINFILES =
 TEMPLATEFILES =
-ZIPFILES = csc8360sb.tex
-ZIPBFILES = csc8360sb.pdf
+ZIPFILES = csc8360_wlans_lec.tex
+ZIPBFILES = csc8360_wlans_lec.pdf
 STYLEFILES = 
 EXPORTHOST = probus
-EXPORTDIR = sbook
+EXPORTDIR = lec4
 EXPORTSITE = $(EXPORTHOST):$(EXPORTDIR)
-EXPORTDIR2 = sbook/courseteam
+EXPORTDIR2 = lec4/courseteam
 EXPORTSITE2 = $(EXPORTHOST):$(EXPORTDIR2)
 REEXPORTHOST = probus
-REEXPORTDIR = sbook
+REEXPORTDIR = lec4
 REEXPORTSITE = $(REEXPORTHOST):$(REEXPORTDIR)
-MINIEXPORTDIR = sbook
+MINIEXPORTDIR = lec4
 MINIEXPORTSITE = $(EXPORTHOST):$(MINIEXPORTDIR)
 EXPORTCMD = rsync -a -L -e ssh
 REEXPORTCMD = scp -r
@@ -56,9 +56,7 @@ previous_group_motif.gif previous_group_motif_gr.gif  previous_motif.gif \
 previous_motif_gr.gif purpleball.gif redball.gif up_motif.gif \
 up_motif_gr.gif whiteball.gif yellowball.gif
 ICONDIR = /usr/local/src/latex2html/icons.gif
-all: csc8360sb.pdf  
-csc8360sb.pdf: introduction.tex history.tex wifi.tex trends.tex design.tex wlans.tex \
-       	troubleshooting.tex modes.tex cellular.tex security.tex fundamentals.tex
+all: csc8360_wlans_lec.pdf  
 # UPDATE the following lines when running newpaper
 allpdfs:
 	for f in *.eps ; \
@@ -76,38 +74,38 @@ commit:
 	cvs commit
 help:
 	less makefilehelp
-print: csc8360sb.ps 
-	lpr csc8360sb.ps
-mpage: csc8360sb.ps
-	mpage -1 -o -t -P -dp -m0 csc8360sb.ps
-xview: csc8360sb.pdf
-	evince csc8360sb.pdf &
-xviewans: csc8360sb_ans.pdf
-	evince csc8360sb_ans.pdf &
-view: csc8360sb.pdf
-	evince csc8360sb.pdf &
-csc8360sb_ans.tex: csc8360sb.tex
-	sed -e 's/ansfalse/anstrue/g' < csc8360sb.tex > csc8360sb_ans.tex 
-csc8360sb.ps: csc8360sb.pdf
-csc8360sb.html: csc8360sb.aux $(TEX1FILES) csc8360sb.bbl .latex2html-init
-csc8360sb.bbl: $(TEX1FILES) $(BIBFILES)
-csc8360sb.pdf: $(TEX1FILES) $(BIBFILES) $(GRAPHICSFILES) csc8360sb.aux csc8360sb.ind
-csc8360sb.tgz: $(TGZFILES)
-	tar -czvf csc8360sb.tgz $(TGZFILES)  
-csc8360sb.minitgz: $(SRCFILES)
-	tar -czvf csc8360sb.minitgz $(SRCFILES) 
-csc8360sb.zip: $(ZIPFILES)  $(ZIPBFILES)
-	if [ -f csc8360sb.zip ] ; then \rm csc8360sb.zip ; fi
-	zip -l csc8360sb.zip $(ZIPFILES) 
-	zip csc8360sb.zip $(ZIPBFILES)
+print: csc8360_wlans_lec.ps 
+	lpr csc8360_wlans_lec.ps
+mpage: csc8360_wlans_lec.ps
+	mpage -1 -o -t -P -dp -m0 csc8360_wlans_lec.ps
+xview: csc8360_wlans_lec.pdf
+	evince csc8360_wlans_lec.pdf &
+xviewans: csc8360_wlans_lec_ans.pdf
+	evince csc8360_wlans_lec_ans.pdf &
+view: csc8360_wlans_lec.pdf
+	evince csc8360_wlans_lec.pdf &
+csc8360_wlans_lec_ans.tex: csc8360_wlans_lec.tex
+	sed -e 's/ansfalse/anstrue/g' < csc8360_wlans_lec.tex > csc8360_wlans_lec_ans.tex 
+csc8360_wlans_lec.ps: csc8360_wlans_lec.pdf
+csc8360_wlans_lec.html: csc8360_wlans_lec.aux $(TEX1FILES) csc8360_wlans_lec.bbl .latex2html-init
+csc8360_wlans_lec.bbl: $(TEX1FILES) $(BIBFILES)
+csc8360_wlans_lec.pdf: $(TEX1FILES) $(BIBFILES) $(GRAPHICSFILES) csc8360_wlans_lec.aux csc8360_wlans_lec.ind
+csc8360_wlans_lec.tgz: $(TGZFILES)
+	tar -czvf csc8360_wlans_lec.tgz $(TGZFILES)  
+csc8360_wlans_lec.minitgz: $(SRCFILES)
+	tar -czvf csc8360_wlans_lec.minitgz $(SRCFILES) 
+csc8360_wlans_lec.zip: $(ZIPFILES)  $(ZIPBFILES)
+	if [ -f csc8360_wlans_lec.zip ] ; then \rm csc8360_wlans_lec.zip ; fi
+	zip -l csc8360_wlans_lec.zip $(ZIPFILES) 
+	zip csc8360_wlans_lec.zip $(ZIPBFILES)
 reexport: $(EXPORTFILES)  
 	ssh $(REEXPORTHOST) "bash -c \"if [ -d $(REEXPORTDIR) ] ; then echo 'Directory exists' ; else mkdir -p $(REEXPORTDIR) ; fi\""
 	$(REEXPORTCMD) index.tgz $(EXPORTFILES) makefile $(REEXPORTSITE)
-export: $(EXPORTFILES) csc8360sb.ps  \
-        csc8360sb.pdf  csc8360sb.html 
+export: $(EXPORTFILES) csc8360_wlans_lec.ps  \
+        csc8360_wlans_lec.pdf  csc8360_wlans_lec.html 
 	ssh $(EXPORTHOST) "bash -c \"if [ -d $(EXPORTDIR) ] ; then echo 'Directory exists' ; else mkdir -p $(EXPORTDIR) ; fi\""
-	$(EXPORTCMD) csc8360sb.tgz $(EXPORTFILES) csc8360sb.pdf makefile \
-              csc8360sb.html $(EXPORTSITE)
+	$(EXPORTCMD) csc8360_wlans_lec.tgz $(EXPORTFILES) csc8360_wlans_lec.pdf makefile \
+              csc8360_wlans_lec.html $(EXPORTSITE)
 	$(POSTEXPORTCMD) 
 miniexport: $(MINIEXPORTFILES)
 	ssh $(EXPORTHOST) "bash -c \"if [ -d $(MINIEXPORTDIR) ] ; then echo 'Directory exists' ; else mkdir -p $(MINIEXPORTDIR) ; fi\""
@@ -146,11 +144,11 @@ install:
 	$(LATEX2HTMLCMD) $*
 	( cd $* ; rm -f $(GRAPHICSFILES) )
 	for f in $(GRAPHICSFILES) ; \
-	do ln -s /home/addie/courses/CSC8360/sbook/$$f $*/$$f ; \
+	do ln -s /home/addie/courses/CSC8360/lectures/lec4/$$f $*/$$f ; \
 	done
 	if [ ! "$(ICONFILES)" = "" ] ; \
 	then ( cd $* ; rm -f $(ICONFILES) ) ; \
-	( cd $(ICONDIR) ; cp $(ICONFILES) /home/addie/courses/CSC8360/sbook/$* );\
+	( cd $(ICONDIR) ; cp $(ICONFILES) /home/addie/courses/CSC8360/lectures/lec4/$* );\
 	fi
 	touch $*.html
 	cd $* ;\

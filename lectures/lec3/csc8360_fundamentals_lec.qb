@@ -1,0 +1,47 @@
+#%qb Quickbeam slide presn template, qb_template.tex (title)
+#\documentclass[18pt]{beamer}
+#\usepackage[utf8]{inputenc}
+# 
+#\title{Wireless Fundamentals}
+#\author{Zhongwei Zhang}
+#\institute{University of Southern Queensland}
+#\date{2022}
+# 
+#%  \usebackgroundtemplate{
+#%  \includegraphics[width=\paperwidth,
+#%  height=\paperheight]{Images/background.jpg}
+#%  }
+#
+#% This seems to work
+#\setbeamerfont{frametitle}{size=\Huge}
+#
+#\definecolor{exampleColor}{rgb}{1,1,.8}
+# 
+#\usepackage{hyperref}
+#
+#\begin{document}
+#\frame{\titlepage}
+# 
+
+RF Fundamentals 
+---------------------
+*	Wireless Signal Characteristics
+*	Antenna Design and Choice
+*	The Shannon-Hartley law
+*	System Gain
+*	Reflection and Refraction
+
+Wireless Signal Characteristics
+-----------
+
+Antenna Design and Choice
+-------------------------
+
+The Shannon-Hartley law
+-----------------------
+
+System Gain
+-----------
+
+Reflection and Refraction
+-------------------------
