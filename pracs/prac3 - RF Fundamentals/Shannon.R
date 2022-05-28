@@ -16,3 +16,7 @@ plot(C, xlim=c(1,55), ylim=c(1,55),
      ylab = "Data Rate (Mbps)")
 lines(x=N, y=C)
 
+
+
+
+
