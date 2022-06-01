@@ -17,11 +17,13 @@ To develop a sound, practical understanding of:
 
 \item channel bandwidth (vs frequency bands);
 
-\item the Shannons-Hartley law
+\item the Shannon-Hartley law
  
 \item system gain; 
 
-\item reflection and refraction of wireless signals.
+\item reflection and refraction of wireless signals;
+
+\item multipath propagation and how OFDM overcomes it.
 
 \end{itemize}
 
@@ -40,7 +42,7 @@ over a larger area. This is illustrated in Figure \ref{inversesquarelaw}.
 	\label{inversesquarelaw}
 \end{figure}
 
-In fact, from the principle illustrated in Figure \ref{inversesquarelaw}, we can conclude,
+From the principle illustrated in Figure \ref{inversesquarelaw}, we can conclude,
 more precisely, that the power of a signal decreases in proportion to the square of the distance
 between the sender and the receiver:
 \begin{equation}
@@ -55,6 +57,32 @@ mist, clouds, rain, etc, then there will be some absorption of energy in the int
 and the inverse square law will not hold exactly.
 
 \subsection{Power vs Frequency }
+
+The atmosphere is not completely transparent for light. Some frequencies are absorbed
+more than others. The absorption of a proportion of the light passing through
+a medium, such as the atmosphere, which is not completely transparent, introduces
+additional loss which is also proportional to a power of the distance between the
+transmitter and the receiver. If the medium is completely transparent, the additional
+gain (although it is actually a loss, we refer to it as a gain less than $1$
+to simplify its numerical expression) due to the medium will be $d^0$, where
+$d$ is the distance. If the media does introduce loss, this gain will be $d^{-a}$
+for some $a>0$.
+
+[David, here we need to introduce a figure which shows the loss, as this power of $d$,
+at different frequencies, due to oxygen, etc.
+
+This would also be a good place to introduce a discussion of the spectrum used
+in Star Link, as an example of the sort of compromise which can be adopted, when
+a frequency has loss, but we can work with it.
+]
+
+For best communication, we naturally prefer to use frequencies of light
+which have as little loss as possible. However, because modern communication technology is
+highly efficient, and there is so much commercial pressure to use the available
+spectrum (frequencies) for communication, we do not simply avoid using frequencies
+with higher loss, but instead we make use of the best methods of modulation, filtering
+and receiver designs so that we can make use of all frequencies by adapting to their
+characteristics.
 
 \subsection{Noise and interference}
 
@@ -77,6 +105,64 @@ choices correctly.
 
 \section{The Shannon-Hartley law}
 
+Supposing a communication channel is not noise free, but has noise with power level $N$, the
+error rate of the received signal will be non-zero. The formula of Hartley and
+Shannon\index{Shannon} takes this into account, and gives the maximum data rate in the presence of noise,
+as:
+$$
+C \leq B \log_{2} (1 + S/N). 
+$$
+where $C$ is the channel capacity, in bits/s, $B$ is the bandwidth, in Hz, and $S/N$ is the 
+signal-to-noise ratio (SNR)\index{signal-to-noise ratio (SNR},
+which is the ratio of the power levels of the signal and the noise, 
+at the receiver. 
+
+\begin{sbexample}{The Shannon capacity of a channel}%
+As an example consider we have a radio channel with bandwidth 10
+\textsc{MH}z. Say the received signal level is 2 m\textsc{W}, and the
+noise level is 0.04 m\textsc{W}. What is the Shannon Capacity of the
+channel?  
+$$ 
+\hbox{SNR} = S/N = 2mW / 0.04 mW = 50 .  
+$$
+
+$$
+C = 10\times 10^{6} \times \log_{2}(1 + \hbox{SNR}) = 10^{7} \times 5.67 = 56.7 \hbox{Mbit/sec} .
+$$
+\end{sbexample}
+
+
+Note that this capacity value is higher than the Nyquist bandwidth of
+the channel. To achieve this high value of capacity it is necessary to
+use more than 2 voltage levels to represent bits ($M > 2$), this was
+rarely done in practice in the past, however, with the introduction of
+OFDM it has become more common to use modulation techniques like QPSK
+(Quadrature Phase Shift Keying)\index{Quadrature Phase Shift Keying
+(QPSK)} in which more than two symbols are transmitted per time slot,
+and hence it becomes possible to exceed the Nyquist rate.
+
+The Shannon Capacity formula also provides a general idea of how much noise we can 
+tolerate on a channel. Suppose we have a radio bandwidth of 30 MHz, as for example in the
+802.11b channel, and we want to transmit data at 11 Mbit/sec. Then,
+\begin{eqnarray}\nonumber
+\hbox{SNR} &=& 2(C/B)-1 \\
+\nonumber
+\hbox{SNR} &=& 2(11*10^{6}/30*10^{6})-1 \\
+\nonumber
+\hbox{SNR} &=& 1.28-1=0.28
+\end{eqnarray}
+
+This corresponds to a signal \textit{loss} of 5.38 dB, which indicates
+that the signal power can actually be \textit{less than} the channel
+noise level.
+
+\begin{exercise}{Using Shannon's capacity formula}
+Consider we have a channel with bandwidth 125 MHz. Suppose the received
+signal level is 5 mW, and the noise level is 1.2 mW. What is the Shannon capacity of
+the channel?
+\end{exercise}
+
+
 \section{System Gain}
 
 \subsection{Free space loss}
@@ -92,4 +178,6 @@ choices correctly.
 
 \section{Reflection and Refraction}
 
+\subsection{Multipath Propagation}
 
+\subsection{Orthogonal Frequency Division Multiplexing}
