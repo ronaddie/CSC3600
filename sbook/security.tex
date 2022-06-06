@@ -1,2 +1,195 @@
 \chapter{Wireless Security}\label{security}
 
+\minitoc 
+
+\clearpage
+\section*{Objectives}
+To develop a sound, practical understanding of:
+\begin{itemize}
+
+\item the history and evolution of security in wireless networks;
+
+\item the different standards that can be used to provide encryption and authentication for 802.11 networks;
+
+\item why it is necessary to make use of services at layer 3 and higher to complement wifi security;
+
+\item the protocols used to transfer security information during wifi security setup.
+
+\end{itemize}
+
+
+\section{History}
+The first of the 802.11 series of standards for wireless communication was accompanied
+by the Wired Equivalent Privacy (WEP) standard for encryption of communication. Since
+802.11 is regarded as a layer 2 protocol (equivalent to ethernet) it was originally felt that
+incorporating security at this layer is not appropriate.
+
+In some situations, particularly if security is provided at higher layers, it is true that providing
+security as part of 802.11 is unnecessary and inappropriate. However, there are also situations
+where providing security at this layer is by far the most natural and convenient way to do it.
+
+The biggest weakness of the WEP protocol is that it uses a {\em shared key}. Thus, anyone who
+makes use of the wireless network is informed of the key that they should use, and they
+are therefore able to pass this information on to others who could exploit this information.
+However, the use of a shared key is appropriate in some cases – for example security for a
+home wireless network.
+
+Not long after WEP was deployed it was discovered that it could be ``cracked" relatively
+quickly by listing to communication over the wireless medium and deducing what key has
+been used for encryption. The method for finding the key relies on the fact that the encryption
+process will usually be re-initialised with the start of each packet. Since there are many pack-
+ets typically being sent, many of which will take a predictable form, the code is vulnerable
+to being cracked by a search through the possible codes. In addition, the key-space is not all
+that large, so the search process does not need to be excessively long.
+
+The software for finding out the shared key in use over the wireless network is readily ob-
+tainable from the Internet and can be used by anyone with the appropriate equipment, i.e. a
+Wifi capable notebook computer.
+
+After these weaknesses were revealed and exploited on may occasions a revised security pro-
+tocol known as Wifi Protected Access (WPA), and soon afterwards WPA II, was introduced.
+
+\section{Wireless Security and Identity Management}\index{Identity Management}
+
+WPA II also provides the ability to encrypt communication using a code based on a shared
+key. Although this approach has its weaknesses, it is very convenient for domestic users, and
+in this situation the weakness of using a shared key is not a serious problem.
+
+In addition, WPA II can work with other systems which allow (or force) users to authenticate
+before they are able to use the wireless network. When this is included in the overall approach
+to security, there is no longer a problem of the shared key. WPA II has a much larger key
+space so that attacks by brute force searches through the range of possible keys are much
+more difficult. The WPA II standard also addresses the weakness of WEP in regard to re-
+initialization of the encryption at the start of each packet.
+
+\section{Proxy-based Security}
+
+In some situations use of a securit protocol embedded in Layer 2, the 802.11 layer, is really
+not appropriate. An example is shared use by patrons of a commercial Wifi network in a
+restaurant or hotel. In these situations a different approach which is widely used is to provide
+free unencrypted access to the wireless network, but to limit the pathways from this network.
+The Wifi network is limited for use to gain access to a certain Proxy server.
+
+The Proxy server is then configured to allow users from the wireless network to connect to
+hosts in the Internet at large only if they have authenticated at the Proxy server. This limits the
+uses that the wireless network can be put to because Proxy servers have limited capabilities.
+The big advantage of this configuration is that access can be controlled by a system installed
+on the Proxy server which is relatively self-managing. For example, this software might
+handle the registration of new users, and their payment for access over a period of time.
+
+It should be kept in mind that in this arrangement, since the wireless network provides free
+access, it may be possible for users who have not registered to intercept communications of
+the users of the network. It should be possible to configure the Proxy server so that it forces
+all communication to be encrypted through the use of SSL, however it is doubtful that this is
+widely done in practise.
+
+\section{Virtual Private Networks}
+
+Another method for providing security for wireless networks at a higher layer is to provide
+limited access to the users of the wireless network unless they have connected to a Virtual
+Private Network (VPN). A VPN is usually configured to require both authentication, using
+a database of user identities provided by a different system, and encryption. This approach
+therefore overcomes the weakness of the unecrypted communication which arises with the
+usef of Proxy servers.
+
+\section{MAC Address Registration}
+
+Yet another for limiting access to wireless networks is to require users to register the MAC
+address (ethernet address, also known as Hardware address) with the Wireless Access Point
+before they are permitted access. Wireless access points can limit access to a list of registered
+MAC addresses.
+
+This is a simple mechanism, however it does not really provide a big increase in security
+because software which allows users to masquerade as having a different MAC address than
+is really present in their computer is available. Also, this method is not idea from the point of
+view of convenience either, because it means that each user must go through an administrative
+procedure before gaining access to the network. In some situations a wireless network might
+only be used for a very breif period, in which case registering to use it before the first use
+might be infeasible.
+
+\begin{exercise}{A scenario where you are a network administrator}
+Imagine that you are the network administrator of a small company, with
+approximately 80 employees, which provides wholesale and retail services to a small
+community at three locations. Some of the staff need to travel within the local region
+to visit clients for installation and maintenance of the services provided by your com-
+pany. Describe all the possible applications of wireless networking to your companies
+operations.
+\end{exercise}
+
+\begin{exercise}{Setting up a point-to-point link}
+In the same context as the previous question, suppose you need to establish 
+communication between two buildings separated by two kilometers. One of the
+buildings is visible from the other and conversely. Describe how you would approach
+solving the problem of establishing cost-effective communication between these two
+sites, including:
+\begin{enumerate}[(a)]
+\item costing and selection of alternative technical solutions – including considerations
+of communication performance;
+\item description of all the protocol layers involved in the communication between the
+sites in your proposed solution;
+\item consideration of security – a description of the issues and your proposed solution;
+\item describe your plan for ongoing monitoring and maintenance of this facility.
+\end{enumerate}
+\end{exercise}
+
+\section{Security Design}\index{security!design}
+
+Traditionally design of networks has been viewed as a constrained optimization problem.
+The constraints in this problem are the security objectives -- a statement concerning
+what conditions should be allowed, and what events or conditions should not be allowed.
+Subject to these constraints, the objecive of the designer is to find the network
+with minimum cost.
+
+It is not obvious that this framework applies to security. In particular, the question of
+how the security constraints can be {\em expressed} needs to be addressed. Fortunately,
+this issue has been addressed in the security literature, and although there is no 
+standard way to do it, much research adopts the idea that security constraints can
+be expressed by means of {\em rules}\index{security!rules} which are recorded either informally, or in a formal
+language, like XACML \cite{xacml10}\index{xacml}.
+
+Security rules can sometimes, but not always, be {\em enforced}. When rules can be enforced,
+it helps to achieve the objective of minimising the likelihood of failures (like break-ins, data-loss,
+data-release). For example, limiting access to certain servers to users who already have
+access to certain other computers will reduce the chance of a break-in. However, rules that
+have not been technically enforced can still be useful. A good example of this is a rule, or collection
+of rules, which prescribe what types of access to user-data are allowed by system adminstrators.
+Enforcing a rule which proscribes access to user data is probably not a good option, because
+the flexibility of allowing administrators such access can be convenient for the users. There
+may also be situations where preventing such access is warranted, and should be enforced.
+
+It might seem that all security rules are about {\em preventing} undesirable outcomes. However,
+it is also useful to include rules which state what {\em should be allowed}, or {\em what must
+be possible}. For example, it is common to express a performance constraint like: {\em all users
+must be able to access their services 99.99\% of the time}.
+
+Rules which state what {\em should be allowed} are called {\em positive} rules.
+
+In summary, we can break down the rules which define security of a network into four categories:
+(i) positive, enforced rules; (ii) positive, un-enforced rules; (iii) negative, enforced rules;
+and (iv) negative, un-enforced rules. Usually it will be clear in which category a rule falls,
+and it is helpful to make this sub-division in to different types of rules.
+
+Consider a rule like: ``User's should change their password at least once every 4 weeks''. Such a rule
+should be described as positive because it states something that should (or perhaps must) be done.
+This rule can be enforced, however doing so might not be a good policy. It could offend some users,
+and most of its objective will be achieved by simply sending reminders, especially if this is only
+done when a password has not been changed for at least the target period of time.
+
+\begin{exercise}{Security rules}
+It has become established practice to define network security by means of
+rules. These rules can take many different forms. Although security is often concerned with preventing access, good security requires consideration of other aspects
+than merely preventing access. Rules may state what types of service or activity are
+not allowed, and also what should be allowed. Rules may take precedence over other
+rules.
+Complete set of rules for the following situations:
+\begin{enumerate}[(a)]
+\item A network of wireless access which is provided in a nationwide network of hotels;
+\item a university campus network (with three types of user -- academics, admin, and
+students);
+\item a home wireless network.
+In each case, include both positive and negative rules, and also rules which are 
+not simply about access, and attempt to ensure that the resulting set of rules is unambiguous,
+complete, and consistent.
+\end{enumerate}
+\end{exercise}
+
