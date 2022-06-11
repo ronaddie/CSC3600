@@ -19,34 +19,34 @@ To develop a sound, practical understanding of:
 
 
 \section{History}
-The first of the 802.11 series of standards for wireless communication was accompanied
-by the Wired Equivalent Privacy (WEP) standard for encryption of communication. Since
-802.11 is regarded as a layer 2 protocol (equivalent to Ethernet) it was originally felt that incorporating security at this layer is not appropriate.
+The first of the IEEE802.11 series of standards for wireless communication was accompanied by the Wired Equivalent Privacy (WEP) standard for encryption of communication. Since IEEE802.11 is regarded as a layer 2 protocol (equivalent to Ethernet) it was originally felt that incorporating security at this layer is not appropriate.
 
-In some situations, particularly if security is provided at higher layers, it is true that providing security as part of 802.11 is unnecessary and inappropriate. However, there are also situations where providing security at this layer is by far the most natural and convenient way to do it.
+In some situations, particularly if security is provided at higher layers, it is true that providing security as part of IEEE802.11 is unnecessary and inappropriate. However, there are also situations where providing security at this layer is by far the most natural and convenient way to do it.
 
 The biggest weakness of the WEP protocol is that it uses a {\em shared key}. Thus, anyone who makes use of the wireless network is informed of the key that they should use, and they are therefore able to pass this information on to others who could exploit this information.
 
-However, the use of a shared key is appropriate in some cases – for example security for a home wireless network.
+However, the use of a shared key is appropriate in some very limited use cases, for example in a home wireless network.
 
-Not long after WEP was deployed it was discovered that it could be ``cracked" relatively
+Not long after WEP was deployed it was discovered that it could be "cracked" relatively
 quickly by listing to communication over the wireless medium and deducing what key has
 been used for encryption. The method for finding the key relies on the fact that the encryption process will usually be re-initialised with the start of each packet. Since there are many packets typically being sent, many of which will take a predictable form, the code is vulnerable to being cracked by a search through the possible codes. 
 
 In addition, the key-space is not all that large, so the search process does not need to be excessively long.
 
-The software for finding out the shared key in use over the wireless network is readily obtainable from the Internet and can be used by anyone with the appropriate equipment, i.e. a WiFi capable notebook computer.
+The software for finding out the shared key in use over the wireless network is readily obtainable from the Internet and can be used by anyone with the appropriate equipment ( ie. WiFi capable laptop computer).
 
-After these weaknesses were revealed and exploited on may occasions a revised security protocol known as WiFi Protected Access (WPA), and soon afterwards WPA II, was introduced.
+After these weaknesses were revealed and exploited on may occasions a revised security protocol known as WiFi Protected Access (WPA), and soon afterwards WPA2 was introduced when the the IEEE802.11i was released in 2004, along with subsequent amendments which all add to the robustness of wireless networks. The overall aim of this specification was to provide wireless networks with stronger authentication, confidentiality and integrity measures.
+
 
 \section{Wireless Security and Identity Management}\index{Identity Management}
 
-WPA II also provides the ability to encrypt communication using a code based on a shared
+
+WPA2 also provides the ability to encrypt communication using a code based on a shared
 key. Although this approach has its weaknesses, it is very convenient for domestic users, and in this situation the weakness of using a shared key is not a serious problem.
 
-In addition, WPA II can work with other systems which allow (or force) users to authenticate before they are able to use the wireless network. When this is included in the overall approach to security, there is no longer a problem of the shared key. WPA II has a much larger key space so that attacks by brute force searches through the range of possible keys are much more difficult. 
+In addition, WPA2 can work with other systems which allow (or force) users to authenticate before they are able to use the wireless network. When this is included in the overall approach to security, there is no longer a problem of the shared key. WPA II has a much larger key space so that attacks by brute force searches through the range of possible keys are much more difficult. 
 
-The WPA II standard also addresses the weakness of WEP in regard to re-initialization of the encryption at the start of each packet.
+The WPA2 standard also addresses the weakness of WEP in regard to re-initialization of the encryption at the start of each packet.
 
 \section{Client Authentication}\index{Client Authentication}
 
