@@ -31,6 +31,7 @@ The Role of Standards
 *	Others are guided by a standards organisation
 	*	E.g. GSM (European standard for mobile phones)
 	* Also adopted in Australia
+	* 802.11 always regulated by IEEE
 
 WiFi and 802.11 Regulations, Standards, Organizations
 ---------------------
@@ -42,14 +43,45 @@ WiFi and 802.11 Regulations, Standards, Organizations
 	*	3GPP
 	*	ETSI
 
-Institute of Electrical and Electronic Engineers (IEEE)
+IEEE Standards
 --------------------------
+@column 0.48
+* IEEE 802.1 Interworking
+* IEEE 802.2 Logical Link
+* IEEE 802.3 Ethernet LAN
+* IEEE 802.4 Token BUS
+* IEEE 802.5 Token Ring
+* IEEE 802.6 Metropolitan Area Network
+* IEEE 802.7 Broadband Advisory
+* IEEE 802.8 Fiber Optic Advisory
+@column
+* IEEE 802.9 Voice/Data
+* IEEE 802.10 Security 
+* IEEE 802.11 Wireless Networks
+* IEEE 802.12 High-Speed Networking
+* IEEE 802.14 Cable Broadband
+* IEEE 802.15 Wireless Personal Area
+* IEEE 802.16 Broadband Wireless Access
 
 Internet Engineering Task Force (Internet Standards)
 --------------------------
+The IETF is the leading body responsible for development and publishing of
+Internet standards (RFCs). \\[2mm]
+#%
+Committees targetted on particular area are formed from time to time.\\[2mm]
+#%
+Members are usually employed by other organisations.\\
 
-The International Telecommunication Union (ITU)
+The ITU
 --------------------------
+#\large
+The ITU has developed and managed standards for communications in general
+for many decades. They have developed hundreds of standards in this area, many
+of which are still in use.\\[2mm]
+#%
+ITU-T International Mobile Telecommunications (IMT) is responsible for all 5G non-radio
+segments including overall 5G architecture, softwarization,
+network management, and fixed-mobile convergence.
 
 The International Standards Organization (ISO)
 --------------------------

@@ -1,6 +1,7 @@
 .SUFFIXES : .dvi .tex .bbl .ind .aux .oldaux .html .ps .m .eps .pdf .bsh .c .pl .java .class .glo .gls .idx .glo .gls .dia .xml .Snw .qb
 # PRESERVE the following lines when applying newpaper
-TEX1FILES = csc8360sb.tex
+TEX1FILES = csc8360sb.tex introduction.tex history.tex wifi.tex trends.tex design.tex wlans.tex \
+       	troubleshooting.tex modes.tex cellular.tex security.tex fundamentals.tex
 TEX2FILES = 
 TEXFILES = $(TEX1FILES) $(TEX2FILES)
 BIBFILES = csc8360sb.bib
@@ -57,8 +58,6 @@ previous_motif_gr.gif purpleball.gif redball.gif up_motif.gif \
 up_motif_gr.gif whiteball.gif yellowball.gif
 ICONDIR = /usr/local/src/latex2html/icons.gif
 all: csc8360sb.pdf  
-csc8360sb.pdf: introduction.tex history.tex wifi.tex trends.tex design.tex wlans.tex \
-       	troubleshooting.tex modes.tex cellular.tex security.tex fundamentals.tex
 # UPDATE the following lines when running newpaper
 allpdfs:
 	for f in *.eps ; \
