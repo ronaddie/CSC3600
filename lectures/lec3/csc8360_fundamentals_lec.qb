@@ -33,6 +33,39 @@ RF Fundamentals
 
 Wireless Signal Characteristics
 -----------
+* Power vs distance
+* Power vs Frequency
+* Noise and interference
+
+Power vs distance
+-----------------
+@imageLeft 0.5 Inverse_square_law.svg.png 0.4
+The power of an electromagnetic signal reduces over distance.
+\begin{equation}
+	P_d = \frac{1}{d^2} P_1,
+\end{equation}
+
+Power vs Frequency
+------------------
+#\large
+The atmosphere is not transparent. 
+Some frequencies are absorbed more than others. \\[3mm]
+Higher frequencies are more likely to be absorbed.\\[3mm]
+This introduces additional loss.\\[3mm]
+This additional ``gain''
+will be $d^{-a}$ for some $a>0$ (a gain less than 1 is really a loss).
+
+Noise and interference
+----------------------
+Supposing the noise has power level $N$, and the signal has power $S$. 
+The formula of Hartley and
+Shannon gives the maximum capacity, $C$,
+as:
+$$
+C \leq B \log_{2} (1 + S/N). 
+$$
+where $B$ is the bandwidth, in Hz.
+
 
 Antenna Design and Choice
 -------------------------
