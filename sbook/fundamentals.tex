@@ -86,6 +86,14 @@ characteristics.
 
 \subsection{Noise and interference}
 
+Noise is present in all communication systems. It is caused by heat, which
+is present in all devices and media involved in a communication system,
+and by electromagnetic radiation, which is also present everywhere. Other
+communications taking place in the same, or a nearby, location will
+also cause interference, although in many cases such signals can also be
+treated as noise. The impact of noise on the capacity of a communication
+system has been precisely quantified in \S\ref{shannonhartley}.
+
 \section{Antenna Design and Choice}
 
 Antenna design is tricky to explain, and to do. Fortunately,
@@ -103,7 +111,7 @@ choices correctly.
 
 
 
-\section{The Shannon-Hartley law}
+\section{The Shannon-Hartley law}\label{shannonhartley}
 
 Supposing a communication channel is not noise free, but has noise with power level $N$, the
 error rate of the received signal will be non-zero. The formula of Hartley and
@@ -179,5 +187,32 @@ the channel?
 \section{Reflection and Refraction}
 
 \subsection{Multipath Propagation}
+\begin{figure}
+	\includegraphics[width=10cm]{multipathproblem.png}
+	\caption{Multipath propagation}\label{multipath}
+\end{figure}
+Wireless signals pass along multiple paths of different gain, and delay
+as shown in Figure \ref{multipath}.
+Each path can have a complex gain which depends on the types of
+reflections or refraction which occur along the path. Nevertheless, each
+frequency does, in general, have a well-defined complex gain, which
+can be estimated.
+
+This is the multipath problem.
 
 \subsection{Orthogonal Frequency Division Multiplexing}
+OFDM solves the multipath problem. In brief, it works as
+follows:
+\begin{itemize}
+\item Divide spectrum up into bands
+\item Relative to a frame, bands are {\em orthogonal}
+\item Estimate the complex gain of each frequency
+\item This overcomes multipath interference
+\item Transmit over all frequencies at once
+\item Each frame must include a cyclic continuation
+\end{itemize}
+
+The OFDM concept was first discovered many decades ago, but
+was fully proved, with an implementation, first, by Australia's CSIRO.
+They were awarded a patent on the concept, which was adopted in 802.11 
+from 802.11a. 802.11b was the last non-OFDM wifi.

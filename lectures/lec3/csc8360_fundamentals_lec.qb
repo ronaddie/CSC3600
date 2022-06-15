@@ -3,7 +3,7 @@
 #\usepackage[utf8]{inputenc}
 # 
 #\title{Wireless Fundamentals}
-#\author{Zhongwei Zhang}
+#\author{}
 #\institute{University of Southern Queensland}
 #\date{2022}
 # 
@@ -53,7 +53,8 @@ Some frequencies are absorbed more than others. \\[3mm]
 Higher frequencies are more likely to be absorbed.\\[3mm]
 This introduces additional loss.\\[3mm]
 This additional ``gain''
-will be $d^{-a}$ for some $a>0$ (a gain less than 1 is really a loss).
+will be $d^{-a}$ for some $a>0$ (a gain less than 1 is really a loss),
+where $d$ is the distance through the atmosphere.
 
 Noise and interference
 ----------------------
@@ -61,8 +62,8 @@ Supposing the noise has power level $N$, and the signal has power $S$.
 The formula of Hartley and
 Shannon gives the maximum capacity, $C$,
 as:
-$$
-C \leq B \log_{2} (1 + S/N). 
+$$multipathproblem.png
+C = B \log_{2} (1 + S/N). 
 $$
 where $B$ is the bandwidth, in Hz.
 
@@ -70,11 +71,31 @@ where $B$ is the bandwidth, in Hz.
 Antenna Design and Choice
 -------------------------
 
-The Shannon-Hartley law
------------------------
 
 System Gain
 -----------
 
 Reflection and Refraction
 -------------------------
+@imageLeft 0.5 multipathproblem.png 0.125
+Wireless signals pass along multiple
+paths of different gain, and delay. 
+Some paths can also be refracted.
+@close
+#~\\[3mm]
+#\centering
+This is the multipath problem.
+
+OFDM
+----
+* OFDM solves the multipath problem.
+	* Divide spectrum up into bands
+	* Relative to a frame, bands are {\em orthogonal}
+	* Estimate the complex gain of each frequency
+	* This overcomes multipath interference
+	* Transmit over all frequencies at once
+	* Each frame must include a cyclic continuation
+@close
+~\\[3mm]\large
+The OFDM concept was fully proved by Australia's CSIRO and 
+introduced from 802.11a. 802.11b was the last non-OFDM wifi.
