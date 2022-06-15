@@ -127,15 +127,45 @@ SIM card standards have also been developed and managed by ETSI.
 
 What is not regulated
 ---------------------
+* Users do not need a license to use these bands
+* All users can use the same frequency bands ``simultaneously''.
 
 What is regulated
 -----------------
+* Frequencies must be in certain 2.4GHz and 5GHz bands, and more
+recently, a 6 GHz band.
+* User's must use the 802.11 standard(s)
+	* These standards specify use of CSMA
+	* This limits interference between nearby users
+* Transmitted power must be below the specified level
+	* The precise limit varies by country
+	* But is $\approx 20$ dBm
+	* $20$ dBm = $100$ mW.
 
 Evolution of 802.11
 -------------------
+#\large\centering
+#\begin{tabular}{|l|l|p{2cm}|p{2cm}|}
+#\hline
+#\bf Year&\bf Standard&\bf Max Speed (Mbps)&\bf Band (GHz)\\
+#\hline
+#1997&802.11&2 &2.4\\
+#1999&802.11b&1--11 &2.4\\
+#1999&802.11a&2--54 &5\\
+#2003&802.11g&6--54 &2.4\\
+#2008&802.11n&72--600 &2.4/5\\
+#2015&802.11ac&433--6933 &5\\
+#2019&802.11ax&600--9608 &2.4/5/6\\
+#TBA&802.11be&40000 &2.4/5/6\\
+#\hline
+#\end{tabular}
 
 Other Wifi Relevant Standards
 -----------------------------
+%
+
+References
+----------
 %
 #\bibliographystyle{plain}
 #\bibliography{../../sbook/csc8360sb}
