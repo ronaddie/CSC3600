@@ -105,11 +105,73 @@ choices correctly.
 
 \subsection{Dipole Antennas}
 
+A short dipole antenna is depicted in Figure \ref{dipole}.
+\begin{figure}
+	\centering
+	\includegraphics[width=6cm]{dipole}
+	\caption{A short dipole antenna (from \url{https://www.antenna-theory.com/antennas/shortdipole.php})}
+	\label{dipole}
+\end{figure}
+When stimalated by an oscillating voltage at its centre, this antenna causes propagation of an electromagnetic
+signal. This is because, due to the physical law described by Maxwell's equations, 
+the {\em current} in the arms of the antenna directly cause a time-varyig magnetic field
+in the vicinity of these arms, which then, because it varies in time and space, also leads
+to a time-varying electrical field. Both these fields then propagate away from the antenna.
+These propagating fields constitute elemctromagnetic radiation, i.e. radio waves. If this field
+is, moreover, varied in time according to a {\em message}, this details of this message will
+be detectable at a receiver some distance away.
+
+The strength of this signal is, naturally enough, proportional to the strength of the electrical signal
+at the source, and also to the length of the arms, so long as the antenna is {\em short}.
+An antenna is regarded as short only if it is shorter, in length, than a quarter of a wavelength,
+for the particular frequency of the original signal. As the antenna approaches a half wavelength, in
+size, the law of signal strength increasing with length of the antenna breaks down, and once
+the antenna is {\em longer} than half a wavelength, transmitted signal strength starts reducing.
+
+Simple dipole antennas must, therefore, be of length in roughly the range 1/4 to 1/2 the wavelength
+of the signal. 
+
+
 \subsection{Frequency dependence}
+
+The idea that the physical dimensions, and shape, of an antenna depends critically on the
+frequencies being transmitted, or received, is not only true for dipole antennas. If an antenna
+is designed for frequency $f$, but used for frequency $2f$, its performance will seriously
+oompromised.
 
 \subsection{Reciprocity}
 
+Reciprocity is the principle that transmission and reception of electromagnetic signals
+from an electrically stimulated (or monitored) antenna obey ``exactly'' the same physical
+principles. Here is one statement of this principle, from \cite{antennatheory}:
+\begin{quote}\em
+Reciprocity is one of the most useful (and fortunate) property of
+antennas. Reciprocity states that the receive and transmit properties of
+an antenna are identical. Hence, antennas do not have distinct transmit
+and receive radiation patterns - if you know the radiation pattern in the
+transmit mode then you also know the pattern in the receive mode. This
+makes things much simpler, as you can imagine.  
+\end{quote}
 
+Although it is not completely obvious how to apply this principle, the important
+takehome message is that our understanding of transmission, such as it is,
+can be used to help our understanding of reception of signals, and conversely.
+This is helpful. In particular, an antenna which is well designed for transmission,
+in a particular context (for example, for a certain frequency range, will also be well designed for receiving signals, in the
+same context.
+
+\subsection{Multiple Input Multiple Output (MIMO)}\label{mimo}
+
+If a larger antenna than 1/4-1/2 wavelength is desired, while retaining the simplicity of the
+dipole structure, rather than making the dipole itself longer, it is necessary to use multiple
+antennas, each of which has the preferred 1/4-1/2 wavelength length. If the signals from these
+multiple antennas have to be combined by carefully selected coefficients, determined by measurements
+of the channel frequency response, the effective signal to noise ratio can be steadily improved
+as more antennas are added. 
+
+This is particularly important for signals with short wavelengths, because no single
+antenna will be able to receive a strong signal by itself. Thus, for higher frequencies,
+it is likely to be essential to use multiple antennas for both sending and receiving signals.
 
 \section{The Shannon-Hartley law}\label{shannonhartley}
 
