@@ -62,7 +62,7 @@ Supposing the noise has power level $N$, and the signal has power $S$.
 The formula of Hartley and
 Shannon gives the maximum capacity, $C$,
 as:
-$$multipathproblem.png
+$$
 C = B \log_{2} (1 + S/N). 
 $$
 where $B$ is the bandwidth, in Hz.
@@ -70,7 +70,47 @@ where $B$ is the bandwidth, in Hz.
 
 Antenna Design and Choice
 -------------------------
+* Dipole antennas
+* Frequency dependence
+* Reciprocity
+* MIMO
 
+Dipole antennas
+---------------
+@imageLeft 0.3 dipole.jpg 0.85
+* current causes a time-varying magnetic field
+* which propagates as light
+* $L < \lambda/2$
+* Signal strength $\sim L$ (so long as $L<\lambda/2$)
+
+Frequency dependence
+--------------------
+The physical dimensions of an antenna depends on the
+frequencies transmitted, or received\\[3mm]
+An antenna for frequency $f$, used for frequency $2f$, will perform badly.
+
+Reciprocity
+-----------
+#\large
+\begin{quote}\it
+Reciprocity is one of the most useful (and fortunate) property of
+antennas. Reciprocity states that the receive and transmit properties of
+an antenna are identical. Hence, antennas do not have distinct transmit
+and receive radiation patterns - if you know the radiation pattern in the
+transmit mode then you also know the pattern in the receive mode. This
+makes things much simpler, as you can imagine.  \cite{antennatheory}
+\end{quote}
+
+MIMO
+----
+#\large~\\[-1cm]
+An antenna larger than 1/4-1/2 wavelength needs to use multiple
+antennas, each with the 1/4-1/2 wavelength length. The signals from each
+antennas have to be combined by complex coefficients, determined from
+the channel frequency response.\\[3mm]
+%
+This is important for high frequences because no single
+antenna will receive sufficient power. 
 
 System Gain
 -----------
@@ -99,3 +139,10 @@ OFDM
 ~\\[3mm]\large
 The OFDM concept was fully proved by Australia's CSIRO and 
 introduced from 802.11a. 802.11b was the last non-OFDM wifi.
+
+References
+----------
+%
+#\bibliographystyle{plain}
+#\bibliography{../../sbook/csc8360sb}
+
