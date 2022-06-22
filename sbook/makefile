@@ -1,6 +1,6 @@
 .SUFFIXES : .dvi .tex .bbl .ind .aux .oldaux .html .ps .m .eps .pdf .bsh .c .pl .java .class .glo .gls .idx .glo .gls .dia .xml .Snw .qb
 # PRESERVE the following lines when applying newpaper
-TEX1FILES = csc8360sb.tex introduction.tex history.tex wifi.tex trends.tex design.tex wlans.tex \
+TEX1FILES = csc8360sb.tex introduction.tex history.tex wifi.tex trends.tex design.tex waccess.tex \
        	troubleshooting.tex modes.tex cellular.tex security.tex fundamentals.tex
 TEX2FILES = 
 TEXFILES = $(TEX1FILES) $(TEX2FILES)

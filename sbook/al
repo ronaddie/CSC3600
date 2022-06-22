@@ -1,4 +1,4 @@
-alias e="gvim -p csc8360sb.tex al makefile bmake.sh history.tex wifi.tex fundamentals.tex wlans.tex modes.tex security.tex design.tex troubleshooting.tex cellular.tex trends.tex &"
+alias e="gvim -p csc8360sb.tex al makefile bmake.sh history.tex wifi.tex fundamentals.tex waccess.tex modes.tex security.tex design.tex troubleshooting.tex cellular.tex trends.tex &"
 alias v="make view"
 alias x="make xview"
 alias xa="make xviewans"
