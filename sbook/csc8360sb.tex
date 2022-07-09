@@ -1,4 +1,4 @@
-\documentclass[a4paper,11pt]{book}
+\documentclass[a4paper,11pt.oneside]{book}
 %\documentclass[a4paper,12pt,oneside]{book}
 %\usepackage[usenames,dvips]{color}
 %\usepackage{subfigure,times,pifont,url,moreverb}
@@ -6,24 +6,15 @@
 \usepackage{makeidx}
 \usepackage{supertabular} % For big tables over more than one page
 \usepackage[utf8]{inputenc} % To get things correct on my machine. Needed on Ron's?
-%\usepackage[color,makeanswers]{macsbcore} % For paper Study Book
-%\usepackage[color,makeanswers]{macsb} % For paper Study Book
 \usepackage[makeanswers,colour]{macsb} % For paper Study Book
-%\usepackage{macsbe}  % For electronic Study Book
-\usepackage{subfigure,moreverb,url} % Extra packages not already loaded
-% \usepackage[duplex]{printer}
+\usepackage[chapter]{minted}
+\usepackage{makeidx}
+\definecolor{LightGray}{rgb}{0.9,0.9,0.9}
+\usepackage{url} % Extra packages not already loaded
 \usepackage{amsmath} \usepackage{amsfonts} \usepackage{amssymb}
 \usepackage{hyperref}  % generate nice pdf
 \usepackage{url}
-\hypersetup{pdftex,
-            backref=true,
-            hyperindex=true,
-            colorlinks=true,
-            linkcolor=black,citecolor=black,filecolor=black,urlcolor=black,
-            bookmarks=true,
-            breaklinks=true
-            }
-% Bold Greek
+\setcounter{tocdepth}{2}          % depth of table of contents
 \let\oldtheindex\theindex\def\theindex{%
 \oldtheindex%\addcontentsline{toc}{chapter}{Index}%
 \pdfbookmark[0]{Index}{theindex}}
@@ -37,6 +28,10 @@ References%
 \def\verbatin{%
   \def\verbatim@font{\small\ttfamily}%
   \VERBATIM}
+\makeatletter
+\def\listoflistings{\@starttoc{lol}}
+\newcommand{\l@listing}[0]{\@dottedtocline {1}{1.5em}{2.3em}}
+\makeatother
 %\renewcommand{\partname}{Part}
 %\renewcommand{\partname}{Chapter}
 % Change  floatpagefraction  to allow full page figures.
@@ -89,9 +84,16 @@ References%
 \section*{List of Tables}
 \addcontentsline{toc}{section}{List of Tables} 
 \listoftabs
-\adjustmtc{1}
+\vfil
+\newpage
+
+\section*{List of Listings}
+\addcontentsline{toc}{section}{List of Listings} 
+\listoflistings
+\adjustmtc
 \vfil
 
+\setcounter{tocdepth}{0}          % depth of table of contents
 \mainmatter
 % To bust into smaller sections, use something like this:
 %    pdftk master.pdf cat 5-29 output sta8304-chap1.pdf
@@ -122,4 +124,5 @@ References%
 
 \bibliographystyle{plain}
 \bibliography{csc8360sb}
+\printindex
 \end{document}

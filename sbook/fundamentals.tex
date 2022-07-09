@@ -28,13 +28,13 @@ To develop a sound, practical understanding of:
 \end{itemize}
 
 
-\section{Wireless Signal Characteristics}
+\section{Wireless Signal Characteristics}\index{Wireless!signal}
 
 \subsection{Power vs distance}
 
 The power of an electromagnetic signal reduces over distance because,
 as the signal propagates through space, the energy it carries is spread
-over a larger area. This is illustrated in Figure \ref{inversesquarelaw}.
+over a larger area. This is illustrated in Figure \ref{inversesquarelaw}.\index{Inverse square law}
 \begin{figure}
 	\centering
 	\includegraphics[width=10cm]{Inverse_square_law_svg}
@@ -56,7 +56,7 @@ the inverse square law to be exact. But if the space has some contents, e.g. air
 mist, clouds, rain, etc, then there will be some absorption of energy in the intervening space
 and the inverse square law will not hold exactly.
 
-\subsection{Power vs Frequency }
+\subsection{Power vs Frequency }\index{power vs frequency}
 
 The atmosphere is not completely transparent for light. Some frequencies are absorbed
 more than others. The absorption of a proportion of the light passing through
@@ -84,7 +84,7 @@ with higher loss, but instead we make use of the best methods of modulation, fil
 and receiver designs so that we can make use of all frequencies by adapting to their
 characteristics.
 
-\subsection{Noise and interference}
+\subsection{Noise and interference}\index{interference}
 
 Noise is present in all communication systems. It is caused by heat, which
 is present in all devices and media involved in a communication system,
@@ -94,7 +94,7 @@ also cause interference, although in many cases such signals can also be
 treated as noise. The impact of noise on the capacity of a communication
 system has been precisely quantified in \S\ref{shannonhartley}.
 
-\section{Antenna Design and Choice}
+\section{Antenna Design and Choice}\index{antenna!design}
 
 Antenna design is tricky to explain, and to do. Fortunately,
 most of us do not need to {\em design} antennas, but merely to
@@ -103,7 +103,7 @@ a certain situation. Nevertheless, there some simple principles
 which we can easily learn that make it a lot easier to make these
 choices correctly.
 
-\subsection{Dipole Antennas}
+\subsection{Dipole Antennas}\index{antenna!dipole}
 
 A short dipole antenna is depicted in Figure \ref{dipole}.
 \begin{figure}
@@ -132,14 +132,14 @@ Simple dipole antennas must, therefore, be of length in roughly the range 1/4 to
 of the signal. 
 
 
-\subsection{Frequency dependence}
+\subsection{Frequency dependence}\index{loss!frequency depedence}
 
 The idea that the physical dimensions, and shape, of an antenna depends critically on the
 frequencies being transmitted, or received, is not only true for dipole antennas. If an antenna
 is designed for frequency $f$, but used for frequency $2f$, its performance will seriously
 oompromised.
 
-\subsection{Reciprocity}
+\subsection{Reciprocity}\index{reciprocity}
 
 Reciprocity is the principle that transmission and reception of electromagnetic signals
 from an electrically stimulated (or monitored) antenna obey ``exactly'' the same physical
@@ -153,14 +153,15 @@ transmit mode then you also know the pattern in the receive mode. This
 makes things much simpler, as you can imagine.  
 \end{quote}
 
-Although it is not completely obvious how to apply this principle, the important
-takehome message is that our understanding of transmission, such as it is,
-can be used to help our understanding of reception of signals, and conversely.
-This is helpful. In particular, an antenna which is well designed for transmission,
-in a particular context (for example, for a certain frequency range, will also be well designed for receiving signals, in the
-same context.
+Although it is not completely obvious how to apply this principle, the
+important takehome message is that our understanding of transmission,
+such as it is, can be used to help our understanding of reception of
+signals, and conversely.  This is helpful. In particular, an antenna
+which is well designed for transmission, in a particular context (for
+example, for a certain frequency range, will also be well designed for
+receiving signals, in the same context.
 
-\subsection{Multiple Input Multiple Output (MIMO)}\label{mimo}
+\subsection{Multiple Input Multiple Output (MIMO)}\label{mimo}\index{Mimo}
 
 If a larger antenna than 1/4-1/2 wavelength is desired, while retaining the simplicity of the
 dipole structure, rather than making the dipole itself longer, it is necessary to use multiple
@@ -173,7 +174,7 @@ This is particularly important for signals with short wavelengths, because no si
 antenna will be able to receive a strong signal by itself. Thus, for higher frequencies,
 it is likely to be essential to use multiple antennas for both sending and receiving signals.
 
-\section{The Shannon-Hartley law}\label{shannonhartley}
+\section{The Shannon-Hartley law}\label{shannonhartley}\index{Shannon-Hartley}
 
 Supposing a communication channel is not noise free, but has noise with power level $N$, the
 error rate of the received signal will be non-zero. The formula of Hartley and
@@ -187,7 +188,7 @@ signal-to-noise ratio (SNR)\index{signal-to-noise ratio (SNR},
 which is the ratio of the power levels of the signal and the noise, 
 at the receiver. 
 
-\begin{sbexample}{The Shannon capacity of a channel}%
+\begin{sbexample}{The Shannon capacity of a channel}\index{Shannon capacity!formula}
 As an example consider we have a radio channel with bandwidth 10
 \textsc{MH}z. Say the received signal level is 2 m\textsc{W}, and the
 noise level is 0.04 m\textsc{W}. What is the Shannon Capacity of the
@@ -212,7 +213,7 @@ OFDM it has become more common to use modulation techniques like QPSK
 and hence it becomes possible to exceed the Nyquist rate.
 
 The Shannon Capacity formula also provides a general idea of how much noise we can 
-tolerate on a channel. Suppose we have a radio bandwidth of 30 MHz, as for example in the
+tolerate on a channel\index{wireless!capacity}. Suppose we have a radio bandwidth of 30 MHz, as for example in the
 802.11b channel, and we want to transmit data at 11 Mbit/sec. Then,
 \begin{eqnarray}\nonumber
 \hbox{SNR} &=& 2(C/B)-1 \\
@@ -222,7 +223,7 @@ tolerate on a channel. Suppose we have a radio bandwidth of 30 MHz, as for examp
 \hbox{SNR} &=& 1.28-1=0.28
 \end{eqnarray}
 
-This corresponds to a signal \textit{loss} of 5.38 dB, which indicates
+This corresponds to a signal \textit{loss} of 5.38 dB, which indicates\index{loss}
 that the signal power can actually be \textit{less than} the channel
 noise level.
 
@@ -248,7 +249,7 @@ the channel?
 
 \section{Reflection and Refraction}
 
-\subsection{Multipath Propagation}
+\subsection{Multipath Propagation}\index{propagation!multipath}
 \begin{figure}
 	\includegraphics[width=10cm]{multipathproblem.png}
 	\caption{Multipath propagation}\label{multipath}
@@ -274,7 +275,7 @@ follows:
 \item Each frame must include a cyclic continuation
 \end{itemize}
 
-The OFDM concept was first discovered many decades ago, but
+The OFDM concept was first discovered many decades ago, but\index{OFDM}
 was fully proved, with an implementation, first, by Australia's CSIRO.
 They were awarded a patent on the concept, which was adopted in 802.11 
 from 802.11a. 802.11b was the last non-OFDM wifi.
