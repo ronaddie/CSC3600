@@ -1,0 +1,41 @@
+#%qb Quickbeam slide presn template, qb_template.tex (title)
+#\documentclass[18pt]{beamer}
+#\usepackage[utf8]{inputenc}
+# 
+#\title{Wireless Multiple Access}
+#\author{David Fatseas and Ron Addie}
+#\institute{University of Southern Queensland}
+#\date{2022}
+# 
+#%  \usebackgroundtemplate{
+#%  \includegraphics[width=\paperwidth,
+#%  height=\paperheight]{Images/background.jpg}
+#%  }
+#
+#% This seems to work
+#\setbeamerfont{frametitle}{size=\Huge}
+#
+#\definecolor{exampleColor}{rgb}{1,1,.8}
+# 
+#\usepackage{hyperref}
+#
+#\begin{document}
+#\frame{\titlepage}
+# 
+
+Wireless Multiple Access
+---------------------
+*	CSMA/CA
+*	Sharing by Treating Other Channels as Noise
+*	Code Sharing
+*	OFDMA
+*	Discussion
+
+Objectives
+----------
+We aim to understand:
+* how nearby wireless devices are able to share access to spectrum;
+* the CSMA/CA multiple access scheme;
+* how devices are able to co-exist by treating nearby signals as noise;
+* the alternative spectrum sharing technologies that are available.
+
