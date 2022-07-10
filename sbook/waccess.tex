@@ -19,11 +19,11 @@ To develop
 
 \section{Carrier Sense Multiple Access (with Collision Avoidance)}\index{CSMA/CA}\label{CSMA/CA}
 
-Carrier-sense multiple access with collision avoidance (CSMA/CA) is a
+Carrier-sense multiple access with collision avoidance (ie; CSMA/CA) is a
 medium access control protocol developed for IEEE 802.11 wireless local
 area networks.  This method is used to assist with collision avoidance
 in wireless networks, where multiple wireless devices connected to the
-wireless network can ``see" access points forming part of the wireless
+wireless network can "see" access points forming part of the wireless
 network but not other wireless devices.
 
 In early versions of wired Ethernet networks adopted the carrier-sense
@@ -66,6 +66,22 @@ available and a CTS message is received from the access point.
 \centering
 	\includegraphics[width=12cm]{CSMA_CA}
 	\caption{CSMA/CA Data Message Transmission Process}
+	\label{CSMA_CA}
+\end{figure}
+
+
+\section{MAC Sub-Layers}
+
+IEEE 802.11 defines two medium access control (ie; MAC) sub-layers, namely:
+\begin{enumerate}[(i)]
+\item The mandatory Distributed Coordination Function (DCF), and
+\item The optional Point Coordination Function (PCF).
+\end{enumerate}
+
+\begin{figure}
+\centering
+	\includegraphics[width=12cm]{mac_layer}
+	\caption{DCF and PCF MAC Sub-Layers}
 	\label{CSMA_CA}
 \end{figure}
 
